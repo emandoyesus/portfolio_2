@@ -267,8 +267,10 @@ float maskTriangle(vec2 p, vec2 id, float cov){
 }
 
 float maskDiamond(vec2 p, float cov){
-  float r = sqrt(cov) * 0.564;
-  return step(abs(p.x - 0.49) + abs(p.y - 0.49), r);
+  float r = sqrt(cov) * 0.5;
+  float d = abs(p.x - 0.5) + abs(p.y - 0.5) - r;
+  float aa = fwidth(d) * 0.8;
+  return cov * (1.0 - smoothstep(-aa, aa, d));
 }
 
 void main(){
@@ -285,9 +287,9 @@ void main(){
   vec2 uv = cellCoord / uResolution * vec2(aspectRatio, 1.0);
 
   float base = fbm2(uv, uTime * 0.05);
-  base = base * 0.5 - 0.65;
-
-  float feed = base + (uDensity - 0.5) * 0.3;
+  // Organic ambient cosmic constellation field:
+  float ambient = smoothstep(0.38, 0.72, base) * 0.42 * uDensity;
+  float feed = ambient;
 
   float speed     = uRippleSpeed;
   float thickness = uRippleThickness;
@@ -453,6 +455,9 @@ export default function PixelBlast({
       });
       renderer.domElement.style.width = "100%";
       renderer.domElement.style.height = "100%";
+      renderer.domElement.style.display = "block";
+      renderer.domElement.style.position = "absolute";
+      renderer.domElement.style.inset = "0";
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
       container.appendChild(renderer.domElement);
 
@@ -592,8 +597,7 @@ export default function PixelBlast({
 
       let activeRippleRemaining = 0;
 
-      const onPointerDown = (e: PointerEvent) => {
-        const { fx, fy } = mapToPixels(e);
+      const triggerRipple = (fx: number, fy: number) => {
         const ix = threeRef.current?.clickIx ?? 0;
         uniforms.uClickPos.value[ix].set(fx, fy);
         uniforms.uClickTimes.value[ix] = uniforms.uTime.value;
@@ -603,11 +607,40 @@ export default function PixelBlast({
         }
       };
 
+      const onPointerDown = (e: PointerEvent) => {
+        const { fx, fy } = mapToPixels(e);
+        triggerRipple(fx, fy);
+      };
+
+      let lastMoveTime = 0;
+      let lastMoveX = -999;
+      let lastMoveY = -999;
+
       const onPointerMove = (e: PointerEvent) => {
-        if (!touch) return;
+        const rect = container.getBoundingClientRect();
+        if (
+          e.clientX < rect.left ||
+          e.clientX > rect.right ||
+          e.clientY < rect.top ||
+          e.clientY > rect.bottom
+        ) {
+          return;
+        }
         if (pauseOnHoverRef.current && isHoveredRef.current) return;
         const { fx, fy, w, h } = mapToPixels(e);
-        touch.addTouch({ x: fx / w, y: fy / h });
+        if (touch) {
+          touch.addTouch({ x: fx / w, y: fy / h });
+        }
+        if (enableRipples) {
+          const now = performance.now();
+          const dist = Math.hypot(fx - lastMoveX, fy - lastMoveY);
+          if (dist > 40 && now - lastMoveTime > 130) {
+            lastMoveTime = now;
+            lastMoveX = fx;
+            lastMoveY = fy;
+            triggerRipple(fx, fy);
+          }
+        }
       };
 
       const onPointerEnter = () => {
@@ -618,14 +651,22 @@ export default function PixelBlast({
         isHoveredRef.current = false;
       };
 
+      const onWindowPointerDown = (e: PointerEvent) => {
+        const rect = container.getBoundingClientRect();
+        if (
+          e.clientX >= rect.left &&
+          e.clientX <= rect.right &&
+          e.clientY >= rect.top &&
+          e.clientY <= rect.bottom
+        ) {
+          onPointerDown(e);
+        }
+      };
+
       container.addEventListener("pointerenter", onPointerEnter);
       container.addEventListener("pointerleave", onPointerLeave);
-      renderer.domElement.addEventListener("pointerdown", onPointerDown, {
-        passive: true,
-      });
-      renderer.domElement.addEventListener("pointermove", onPointerMove, {
-        passive: true,
-      });
+      window.addEventListener("pointerdown", onWindowPointerDown, { passive: true });
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
 
       let accumulatedTime = 0;
       let raf = 0;
@@ -688,10 +729,15 @@ export default function PixelBlast({
         liquidEffect,
         onPointerEnter,
         onPointerLeave,
+        onWindowPointerDown,
+        onWindowPointerMove: onPointerMove,
       };
     } else {
       const t = threeRef.current;
       if (!t) return;
+      if (t.renderer.domElement.parentElement !== container) {
+        container.appendChild(t.renderer.domElement);
+      }
       t.uniforms.uShapeType.value = SHAPE_MAP[variant] ?? 0;
       t.uniforms.uPixelSize.value = pixelSize * t.renderer.getPixelRatio();
       t.uniforms.uColor.value.set(color);
@@ -718,7 +764,6 @@ export default function PixelBlast({
 
     return () => {
       io.disconnect();
-      if (threeRef.current && mustReinit) return;
       if (!threeRef.current) return;
       const t = threeRef.current;
       t.resizeObserver?.disconnect();
@@ -730,6 +775,8 @@ export default function PixelBlast({
       t.renderer.forceContextLoss();
       if (t.onPointerEnter) container.removeEventListener("pointerenter", t.onPointerEnter);
       if (t.onPointerLeave) container.removeEventListener("pointerleave", t.onPointerLeave);
+      if ((t as any).onWindowPointerDown) window.removeEventListener("pointerdown", (t as any).onWindowPointerDown);
+      if ((t as any).onWindowPointerMove) window.removeEventListener("pointermove", (t as any).onWindowPointerMove);
       if (t.renderer.domElement.parentElement === container) {
         container.removeChild(t.renderer.domElement);
       }

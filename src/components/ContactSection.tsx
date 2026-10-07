@@ -29,18 +29,19 @@ export default function ContactSection() {
       <div className="max-w-[1100px] mx-auto">
         <div className="bg-card border border-hairline p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
           {/* Interactive PixelBlast Liquid Ripple Canvas */}
-          <div className="absolute inset-0 z-0 pointer-events-auto opacity-65">
+          <div className="absolute inset-0 z-0 pointer-events-auto opacity-75">
             <PixelBlast
+              className="w-full h-full"
               variant="diamond"
               pixelSize={7}
-              color="#181c66"
+              color="#4e5ee8"
               patternScale={2.5}
-              patternDensity={1.1}
+              patternDensity={1.25}
               pixelSizeJitter={0.35}
               enableRipples
               rippleSpeed={0.4}
               rippleThickness={0.12}
-              rippleIntensityScale={1.6}
+              rippleIntensityScale={2.0}
               liquid={false}
               speed={0.5}
               edgeFade={0.3}
@@ -54,9 +55,8 @@ export default function ContactSection() {
           {/* Card Content (Elevated above background canvas) */}
           <div className="relative z-10 pointer-events-none">
             {/* Heading */}
-            <p className="text-xs uppercase tracking-[0.25em] text-orange-400 font-mono mb-4 pointer-events-auto flex items-center justify-center gap-2">
-              <span className="size-1.5 rounded-full bg-[#ff6b2c] animate-pulse shadow-[0_0_10px_#f97316]" />
-              <span>Get in touch</span>
+            <p className="text-xs uppercase tracking-[0.25em] text-accent font-mono mb-4 pointer-events-auto">
+              Get in touch
             </p>
             <h2 className="font-display text-4xl sm:text-6xl text-chalk font-normal tracking-tight mb-6 max-w-2xl mx-auto pointer-events-auto">
               Let&apos;s build your next system together.
@@ -69,7 +69,7 @@ export default function ContactSection() {
             <div className="flex flex-wrap justify-center items-center gap-4 mb-8 pointer-events-auto">
               <a
                 href={`mailto:${email}`}
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-[#ff6b2c] to-[#f97316] text-white font-semibold text-sm hover:from-[#ff7a3d] hover:to-[#ea580c] transition-all shadow-[0_0_28px_rgba(249,115,22,0.55)] hover:shadow-[0_0_38px_rgba(249,115,22,0.8)] hover:scale-105 border border-orange-400/40"
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-chalk text-ink font-semibold text-sm hover:bg-white transition-all shadow-[0_0_24px_rgba(46,55,148,0.4)] hover:scale-105"
               >
                 <Send size={15} />
                 <span>Send an Email</span>
