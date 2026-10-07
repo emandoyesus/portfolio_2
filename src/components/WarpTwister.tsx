@@ -155,7 +155,7 @@ export default function WarpTwister({
   edgeFade = 2,
   spiralTight = 0.5,
   rotSpeed = 0,
-  baseColor = [0.831, 0.686, 0.216], // Elegant architectural gold #d4af37
+  baseColor = [0.094, 0.11, 0.4], // Cosmic navy #181c66
   cameraDistance = 8.5,
   className = "",
   style = {},

@@ -31,8 +31,8 @@ export default function ContactSection() {
           {/* Interactive PixelBlast Liquid Ripple Canvas */}
           <div className="absolute inset-0 z-0 pointer-events-auto opacity-65">
             <PixelBlast
-              variant="circle"
-              pixelSize={5}
+              variant="diamond"
+              pixelSize={7}
               color="#181c66"
               patternScale={2.5}
               patternDensity={1.1}

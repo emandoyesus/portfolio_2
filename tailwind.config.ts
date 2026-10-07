@@ -18,7 +18,7 @@ const config: Config = {
         dim: "#555555",
         hairline: "rgba(255, 255, 255, 0.08)",
         "hairline-strong": "rgba(255, 255, 255, 0.18)",
-        accent: "#d4af37", // Elegant gold accent
+        accent: "#707eff", // Cosmic indigo accent matching #181c66
         "accent-secondary": "#6b8f71", // Sage green
         positive: "#22c55e",
       },
@@ -35,10 +35,20 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-reverse": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
       },
       animation: {
         "survey-breathe": "survey-breathe 8s ease-in-out infinite",
         "enter-rise": "enter-rise 0.7s ease-out forwards",
+        marquee: "marquee 32s linear infinite",
+        "marquee-reverse": "marquee-reverse 32s linear infinite",
       },
     },
   },

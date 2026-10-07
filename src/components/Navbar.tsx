@@ -26,8 +26,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ease-out ${
         scrolled
-          ? "translate-y-0 opacity-100 pointer-events-auto border-b border-hairline bg-ink/85 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.85)]"
-          : "-translate-y-full opacity-0 pointer-events-none border-b-transparent bg-transparent"
+          ? "bg-ink/85 backdrop-blur-xl shadow-[0_16px_36px_-12px_rgba(0,0,0,0.85)]"
+          : "bg-gradient-to-b from-ink/90 via-ink/50 to-transparent backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between px-6 sm:px-10">
@@ -79,7 +79,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="border-b border-hairline bg-ink/98 px-6 py-5 backdrop-blur-2xl md:hidden animate-enter-rise">
+        <div className="bg-ink/98 px-6 py-5 backdrop-blur-2xl md:hidden animate-enter-rise shadow-2xl">
           <nav aria-label="Mobile Navigation" className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a

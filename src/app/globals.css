@@ -67,3 +67,40 @@
     text-wrap: balance;
   }
 }
+
+/* ==========================================================================
+   Toolkit Infinite Marquee Animations
+   ========================================================================== */
+@keyframes marquee-forward {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marquee__track {
+  display: flex !important;
+  width: max-content !important;
+  will-change: transform;
+  animation: marquee-forward 28s linear infinite !important;
+}
+
+.marquee__track[data-reverse="true"] {
+  animation: marquee-reverse 28s linear infinite !important;
+}
+
+.marquee__track:hover {
+  animation-play-state: paused !important;
+}
+

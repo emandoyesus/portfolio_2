@@ -13,8 +13,8 @@ export default function HeroSection() {
       {/* Interactive PixelBlast Liquid Ripple Canvas - Starting from the very top */}
       <div className="absolute inset-0 z-0 pointer-events-auto opacity-65">
         <PixelBlast
-          variant="circle"
-          pixelSize={5}
+          variant="diamond"
+          pixelSize={7}
           color="#181c66"
           patternScale={2.6}
           patternDensity={1.0}
