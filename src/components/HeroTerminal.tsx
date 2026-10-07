@@ -213,10 +213,10 @@ export default function HeroTerminal() {
                           </span>
                           : [
                           <span
-                            className="inline-flex items-center gap-1 mx-1.5 px-2 py-0.5 rounded bg-solar/10 border border-solar/35 group-hover/fold:border-solar/80 text-solar text-[11px] font-mono transition-all group-hover/fold:bg-solar/20 shadow-sm"
+                            className="inline-flex items-center gap-1 mx-1.5 px-2 py-0.5 rounded bg-orange-500/15 border border-orange-500/40 group-hover/fold:border-orange-400 group-hover/fold:bg-orange-500/25 text-orange-400 text-[11px] font-mono transition-all shadow-[0_0_12px_rgba(249,115,22,0.15)]"
                             title={`Click to expand: ${cat.items.join(", ")}`}
                           >
-                            <span className="text-solar/60 font-sans text-[10px]">...</span>
+                            <span className="text-orange-400/60 font-sans text-[10px]">...</span>
                             <span>{cat.items.length} skills</span>
                           </span>
                           ]{isLastCategory ? "" : ","}

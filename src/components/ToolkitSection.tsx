@@ -103,9 +103,9 @@ export default function ToolkitSection() {
                 {band2Items.map((tool, idx) => (
                   <li
                     key={`b2-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-solar/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-orange-500/[0.08] hover:border-orange-500/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <span className="size-1.5 rounded-full bg-solar/70 group-hover:bg-solar group-hover:shadow-[0_0_8px_#fbbf24] transition-all" />
+                    <span className="size-1.5 rounded-full bg-orange-400 group-hover:bg-orange-300 group-hover:shadow-[0_0_10px_#f97316] transition-all" />
                     <span>{tool}</span>
                   </li>
                 ))}
@@ -115,9 +115,9 @@ export default function ToolkitSection() {
                 {band2Items.map((tool, idx) => (
                   <li
                     key={`b2-clone-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-solar/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-orange-500/[0.08] hover:border-orange-500/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <span className="size-1.5 rounded-full bg-solar/70 group-hover:bg-solar group-hover:shadow-[0_0_8px_#fbbf24] transition-all" />
+                    <span className="size-1.5 rounded-full bg-orange-400 group-hover:bg-orange-300 group-hover:shadow-[0_0_10px_#f97316] transition-all" />
                     <span>{tool}</span>
                   </li>
                 ))}

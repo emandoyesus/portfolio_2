@@ -54,8 +54,8 @@ export default function ContactSection() {
           {/* Card Content (Elevated above background canvas) */}
           <div className="relative z-10 pointer-events-none">
             {/* Heading */}
-            <p className="text-xs uppercase tracking-[0.25em] text-solar font-mono mb-4 pointer-events-auto flex items-center justify-center gap-2">
-              <span className="size-1.5 rounded-full bg-solar animate-pulse shadow-[0_0_6px_#fbbf24]" />
+            <p className="text-xs uppercase tracking-[0.25em] text-orange-400 font-mono mb-4 pointer-events-auto flex items-center justify-center gap-2">
+              <span className="size-1.5 rounded-full bg-[#ff6b2c] animate-pulse shadow-[0_0_10px_#f97316]" />
               <span>Get in touch</span>
             </p>
             <h2 className="font-display text-4xl sm:text-6xl text-chalk font-normal tracking-tight mb-6 max-w-2xl mx-auto pointer-events-auto">
@@ -69,7 +69,7 @@ export default function ContactSection() {
             <div className="flex flex-wrap justify-center items-center gap-4 mb-8 pointer-events-auto">
               <a
                 href={`mailto:${email}`}
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-chalk text-ink font-semibold text-sm hover:bg-white transition-all shadow-[0_0_24px_rgba(46,55,148,0.4)] hover:scale-105"
+                className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-gradient-to-r from-[#ff6b2c] to-[#f97316] text-white font-semibold text-sm hover:from-[#ff7a3d] hover:to-[#ea580c] transition-all shadow-[0_0_28px_rgba(249,115,22,0.55)] hover:shadow-[0_0_38px_rgba(249,115,22,0.8)] hover:scale-105 border border-orange-400/40"
               >
                 <Send size={15} />
                 <span>Send an Email</span>

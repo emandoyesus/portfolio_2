@@ -87,7 +87,7 @@ export default function ServicesSection() {
               <div>
                 {/* Header row */}
                 <div className="flex items-center justify-between mb-5">
-                  <span className="font-mono text-xs text-solar tracking-wider font-semibold">
+                  <span className="font-mono text-xs text-orange-400 tracking-wider font-semibold">
                     {svc.num}
                   </span>
                   <div className="grid size-9 place-items-center bg-surface border border-hairline text-muted group-hover:text-accent group-hover:border-accent/50 transition-colors">

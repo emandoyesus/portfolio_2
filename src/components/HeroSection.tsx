@@ -51,7 +51,7 @@ export default function HeroSection() {
         {/* Left: Main Heading and Intro */}
         <div className="flex flex-col items-start gap-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-hairline bg-surface/80 text-xs font-mono text-[#828ddc] pointer-events-auto">
-            <span className="size-1.5 rounded-full bg-solar animate-pulse shadow-[0_0_8px_#fbbf24]" />
+            <span className="size-1.5 rounded-full bg-[#ff6b2c] animate-pulse shadow-[0_0_10px_#f97316]" />
             <span>FULL STACK DEVELOPER • DESSIE, ETHIOPIA</span>
           </div>
 
@@ -82,20 +82,20 @@ export default function HeroSection() {
               <span>Featured Projects</span>
             </a>
 
-            {/* Accent Action Button */}
+            {/* Accent Action Button in Vibrant Orange */}
             <a
               href="#contact"
-              className="group/btn relative inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-ink bg-chalk hover:bg-white hover:shadow-[0_0_24px_rgba(46,55,148,0.5)] transition-all duration-300"
+              className="group/btn relative inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-white bg-gradient-to-r from-[#ff6b2c] to-[#f97316] hover:from-[#ff7a3d] hover:to-[#ea580c] shadow-[0_0_28px_rgba(249,115,22,0.55)] hover:shadow-[0_0_38px_rgba(249,115,22,0.8)] hover:scale-[1.02] transition-all duration-300 border border-orange-400/40"
             >
               <span>Contact Now</span>
             </a>
 
-            {/* Hand-drawn decorative arrow pointing to CTA */}
+            {/* Hand-drawn decorative arrow pointing to CTA in Glowing Orange */}
             <svg
               aria-hidden="true"
               viewBox="0 0 148 56"
               fill="none"
-              className="pointer-events-none text-solar hidden w-[90px] -translate-y-2 sm:block opacity-90 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]"
+              className="pointer-events-none text-[#ff6b2c] hidden w-[90px] -translate-y-2 sm:block opacity-95 drop-shadow-[0_0_10px_rgba(249,115,22,0.65)]"
             >
               <path
                 d="M140 8 C 104 12, 58 26, 20 46"
@@ -130,6 +130,12 @@ export default function HeroSection() {
           <ChevronDown className="size-6 animate-bounce" />
         </a>
       </div>
+
+      {/* Warm radiant orange ambient glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-10 left-1/4 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(249,115,22,0.14)_0%,transparent_70%)] blur-3xl -z-10"
+      />
 
       {/* Smooth transitional hairline divider into Projects section */}
       <div

@@ -139,9 +139,9 @@ export default function ProjectShowcase() {
                       <ArrowUpRight size={13} className="text-accent ml-0.5 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 transition-transform" />
                     </div>
 
-                    {/* Left corner tag badge */}
-                    <div className="absolute top-3 left-3 px-2.5 py-1 bg-ink/80 border border-hairline/80 text-[10px] font-mono text-chalk/90 backdrop-blur-md flex items-center gap-1.5">
-                      <span className="size-1.5 rounded-full bg-solar animate-pulse shadow-[0_0_6px_#fbbf24]" />
+                    {/* Left corner tag badge in Vibrant Orange */}
+                    <div className="absolute top-3 left-3 px-2.5 py-1 bg-ink/90 border border-orange-500/40 text-[10px] font-mono text-orange-300 backdrop-blur-md flex items-center gap-1.5 shadow-[0_0_12px_rgba(249,115,22,0.2)]">
+                      <span className="size-1.5 rounded-full bg-orange-400 animate-pulse shadow-[0_0_8px_#f97316]" />
                       <span>{project.badge}</span>
                     </div>
                   </div>
@@ -169,7 +169,7 @@ export default function ProjectShowcase() {
                 <div className="space-y-2.5 mb-6">
                   {project.highlights.map((bullet, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-sm text-chalk/80 leading-relaxed font-sans">
-                      <CheckCircle2 size={15} className="text-solar shrink-0 mt-1" />
+                      <CheckCircle2 size={15} className="text-orange-400 shrink-0 mt-1 drop-shadow-[0_0_6px_rgba(249,115,22,0.35)]" />
                       <span>{bullet}</span>
                     </div>
                   ))}
