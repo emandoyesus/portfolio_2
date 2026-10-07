@@ -140,8 +140,9 @@ export default function ProjectShowcase() {
                     </div>
 
                     {/* Left corner tag badge */}
-                    <div className="absolute top-3 left-3 px-2.5 py-1 bg-ink/80 border border-hairline/80 text-[10px] font-mono text-chalk/90 backdrop-blur-md">
-                      {project.badge}
+                    <div className="absolute top-3 left-3 px-2.5 py-1 bg-ink/80 border border-hairline/80 text-[10px] font-mono text-chalk/90 backdrop-blur-md flex items-center gap-1.5">
+                      <span className="size-1.5 rounded-full bg-solar animate-pulse shadow-[0_0_6px_#fbbf24]" />
+                      <span>{project.badge}</span>
                     </div>
                   </div>
                 </a>
@@ -168,7 +169,7 @@ export default function ProjectShowcase() {
                 <div className="space-y-2.5 mb-6">
                   {project.highlights.map((bullet, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-sm text-chalk/80 leading-relaxed font-sans">
-                      <CheckCircle2 size={15} className="text-accent shrink-0 mt-1" />
+                      <CheckCircle2 size={15} className="text-solar shrink-0 mt-1" />
                       <span>{bullet}</span>
                     </div>
                   ))}

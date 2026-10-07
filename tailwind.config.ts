@@ -19,6 +19,9 @@ const config: Config = {
         hairline: "rgba(255, 255, 255, 0.08)",
         "hairline-strong": "rgba(255, 255, 255, 0.18)",
         accent: "#707eff", // Cosmic indigo accent matching #181c66
+        solar: "#fbbf24", // Warm solar amber 3rd accent
+        "solar-deep": "#f59e0b",
+        "solar-glow": "rgba(251, 191, 36, 0.25)",
         "accent-secondary": "#6b8f71", // Sage green
         positive: "#22c55e",
       },

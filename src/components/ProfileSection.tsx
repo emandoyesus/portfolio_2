@@ -317,8 +317,8 @@ export default function ProfileSection() {
 
                   {/* Nanodegree Certificates */}
                   <div>
-                    <h5 className="text-xs font-mono uppercase tracking-wider text-accent mb-3 flex items-center gap-2">
-                      <Award size={14} />
+                    <h5 className="text-xs font-mono uppercase tracking-wider text-solar mb-3 flex items-center gap-2">
+                      <Award size={14} className="text-solar" />
                       <span>Certified Nanodegrees</span>
                     </h5>
                     <div className="space-y-3">
@@ -331,7 +331,7 @@ export default function ProfileSection() {
                             Udacity Nanodegree • Native Android application architecture, UI layouts, local storage, and background processing.
                           </p>
                         </div>
-                        <span className="text-xs font-mono text-accent shrink-0">Feb 2026</span>
+                        <span className="text-xs font-mono text-solar border border-solar/35 bg-solar/10 px-2 py-0.5 shrink-0">Feb 2026</span>
                       </div>
 
                       <div className="p-4 border border-hairline bg-surface/30 flex items-start justify-between gap-4">
@@ -343,7 +343,7 @@ export default function ProfileSection() {
                             Udacity Nanodegree • Core programming paradigms, problem-solving, modular code structures, and debugging.
                           </p>
                         </div>
-                        <span className="text-xs font-mono text-accent shrink-0">Dec 2025</span>
+                        <span className="text-xs font-mono text-solar border border-solar/35 bg-solar/10 px-2 py-0.5 shrink-0">Dec 2025</span>
                       </div>
                     </div>
                   </div>

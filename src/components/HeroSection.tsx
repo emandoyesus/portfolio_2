@@ -51,7 +51,7 @@ export default function HeroSection() {
         {/* Left: Main Heading and Intro */}
         <div className="flex flex-col items-start gap-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 border border-hairline bg-surface/80 text-xs font-mono text-[#828ddc] pointer-events-auto">
-            <span className="size-1.5 rounded-full bg-[#3d49b8] animate-pulse" />
+            <span className="size-1.5 rounded-full bg-solar animate-pulse shadow-[0_0_8px_#fbbf24]" />
             <span>FULL STACK DEVELOPER • DESSIE, ETHIOPIA</span>
           </div>
 
@@ -95,7 +95,7 @@ export default function HeroSection() {
               aria-hidden="true"
               viewBox="0 0 148 56"
               fill="none"
-              className="pointer-events-none text-[#4d5bd6] hidden w-[90px] -translate-y-2 sm:block opacity-75"
+              className="pointer-events-none text-solar hidden w-[90px] -translate-y-2 sm:block opacity-90 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]"
             >
               <path
                 d="M140 8 C 104 12, 58 26, 20 46"

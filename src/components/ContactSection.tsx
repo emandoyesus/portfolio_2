@@ -54,8 +54,9 @@ export default function ContactSection() {
           {/* Card Content (Elevated above background canvas) */}
           <div className="relative z-10 pointer-events-none">
             {/* Heading */}
-            <p className="text-xs uppercase tracking-[0.25em] text-accent font-mono mb-4 pointer-events-auto">
-              Get in touch
+            <p className="text-xs uppercase tracking-[0.25em] text-solar font-mono mb-4 pointer-events-auto flex items-center justify-center gap-2">
+              <span className="size-1.5 rounded-full bg-solar animate-pulse shadow-[0_0_6px_#fbbf24]" />
+              <span>Get in touch</span>
             </p>
             <h2 className="font-display text-4xl sm:text-6xl text-chalk font-normal tracking-tight mb-6 max-w-2xl mx-auto pointer-events-auto">
               Let&apos;s build your next system together.
