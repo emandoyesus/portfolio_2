@@ -11,22 +11,25 @@ export default function HeroSection() {
       className="relative flex w-full flex-col items-center gap-10 overflow-hidden px-6 pt-24 pb-12 sm:px-10 sm:pt-28 lg:gap-14"
     >
       {/* Interactive PixelBlast Liquid Ripple Canvas - Starting from the very top */}
-      <div className="absolute inset-0 z-0 pointer-events-auto opacity-85">
+      <div className="absolute inset-0 z-0 pointer-events-auto opacity-75">
         <PixelBlast
           className="w-full h-full"
-          variant="diamond"
-          pixelSize={7}
-          color="#4e5ee8"
-          patternScale={2.6}
-          patternDensity={1.25}
-          pixelSizeJitter={0.35}
+          variant="circle"
+          pixelSize={6}
+          color="#181c66"
+          patternScale={3}
+          patternDensity={1.2}
+          pixelSizeJitter={0.5}
           enableRipples
           rippleSpeed={0.4}
           rippleThickness={0.12}
-          rippleIntensityScale={2.5}
-          liquid={false}
-          speed={0.55}
-          edgeFade={0}
+          rippleIntensityScale={1.5}
+          liquid
+          liquidStrength={0.12}
+          liquidRadius={1.2}
+          liquidWobbleSpeed={5}
+          speed={0.6}
+          edgeFade={0.25}
           transparent
         />
         {/* Soft bottom transition mask to blend smoothly into the next section */}

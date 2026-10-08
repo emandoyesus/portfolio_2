@@ -267,10 +267,8 @@ float maskTriangle(vec2 p, vec2 id, float cov){
 }
 
 float maskDiamond(vec2 p, float cov){
-  float r = sqrt(cov) * 0.5;
-  float d = abs(p.x - 0.5) + abs(p.y - 0.5) - r;
-  float aa = fwidth(d) * 0.8;
-  return cov * (1.0 - smoothstep(-aa, aa, d));
+  float r = sqrt(cov) * 0.564;
+  return step(abs(p.x - 0.49) + abs(p.y - 0.49), r);
 }
 
 void main(){
@@ -287,14 +285,14 @@ void main(){
   vec2 uv = cellCoord / uResolution * vec2(aspectRatio, 1.0);
 
   float base = fbm2(uv, uTime * 0.05);
-  // Organic ambient cosmic constellation field:
-  float ambient = (smoothstep(0.35, 0.72, base) * 0.45 + 0.08) * uDensity;
-  float feed = ambient;
+  base = base * 0.5 - 0.65;
+
+  float feed = base + (uDensity - 0.5) * 0.3;
 
   float speed     = uRippleSpeed;
   float thickness = uRippleThickness;
-  const float dampT     = 0.65;
-  const float dampR     = 2.2;
+  const float dampT     = 1.0;
+  const float dampR     = 10.0;
 
   if (uEnableRipples == 1) {
     for (int i = 0; i < MAX_CLICKS; ++i){
@@ -360,7 +358,6 @@ interface ThreeState {
   composer?: EffectComposer;
   touch?: ReturnType<typeof createTouchTexture>;
   liquidEffect?: Effect;
-  initialBlastTimeout?: ReturnType<typeof setTimeout>;
   onPointerEnter?: () => void;
   onPointerLeave?: () => void;
 }
@@ -598,64 +595,22 @@ export default function PixelBlast({
 
       let activeRippleRemaining = 0;
 
-      const triggerRipple = (fx: number, fy: number) => {
+      const onPointerDown = (e: PointerEvent) => {
+        const { fx, fy } = mapToPixels(e);
         const ix = threeRef.current?.clickIx ?? 0;
         uniforms.uClickPos.value[ix].set(fx, fy);
         uniforms.uClickTimes.value[ix] = uniforms.uTime.value;
-        activeRippleRemaining = 2.5;
+        activeRippleRemaining = 1.6;
         if (threeRef.current) {
           threeRef.current.clickIx = (ix + 1) % MAX_CLICKS;
         }
       };
 
-      let lastAutoBlastTime = performance.now();
-      let autoBlastCount = 0;
-
-      // Initial blast so the shockwave is immediately visible on page load
-      const initialBlastTimeout = setTimeout(() => {
-        if (threeRef.current && container.clientWidth > 0) {
-          const w = renderer.domElement.width;
-          const h = renderer.domElement.height;
-          triggerRipple(w * 0.38, h * 0.44);
-        }
-      }, 150);
-
-      const onPointerDown = (e: PointerEvent) => {
-        const { fx, fy } = mapToPixels(e);
-        lastAutoBlastTime = performance.now();
-        triggerRipple(fx, fy);
-      };
-
-      let lastMoveTime = 0;
-      let lastMoveX = -999;
-      let lastMoveY = -999;
-
       const onPointerMove = (e: PointerEvent) => {
-        const rect = container.getBoundingClientRect();
-        if (
-          e.clientX < rect.left ||
-          e.clientX > rect.right ||
-          e.clientY < rect.top ||
-          e.clientY > rect.bottom
-        ) {
-          return;
-        }
+        if (!touch) return;
         if (pauseOnHoverRef.current && isHoveredRef.current) return;
         const { fx, fy, w, h } = mapToPixels(e);
-        if (touch) {
-          touch.addTouch({ x: fx / w, y: fy / h });
-        }
-        if (enableRipples) {
-          const now = performance.now();
-          const dist = Math.hypot(fx - lastMoveX, fy - lastMoveY);
-          if (dist > 30 && now - lastMoveTime > 110) {
-            lastMoveTime = now;
-            lastAutoBlastTime = now;
-            lastMoveX = fx;
-            lastMoveY = fy;
-            triggerRipple(fx, fy);
-          }
-        }
+        touch.addTouch({ x: fx / w, y: fy / h });
       };
 
       const onPointerEnter = () => {
@@ -689,24 +644,6 @@ export default function PixelBlast({
         if (autoPauseOffscreen && !visibilityRef.current.visible) {
           raf = requestAnimationFrame(animate);
           return;
-        }
-
-        // Autonomous periodic ambient pulse blast
-        const now = performance.now();
-        if (enableRipples && now - lastAutoBlastTime > 3400) {
-          lastAutoBlastTime = now;
-          autoBlastCount++;
-          const w = renderer.domElement.width;
-          const h = renderer.domElement.height;
-          const blastPositions = [
-            [0.28, 0.42],
-            [0.72, 0.38],
-            [0.5, 0.58],
-            [0.18, 0.62],
-            [0.82, 0.52],
-          ];
-          const [nx, ny] = blastPositions[autoBlastCount % blastPositions.length];
-          triggerRipple(nx * w, ny * h);
         }
 
         const isPaused = pauseOnHoverRef.current && isHoveredRef.current;
@@ -760,7 +697,6 @@ export default function PixelBlast({
         composer,
         touch,
         liquidEffect,
-        initialBlastTimeout,
         onPointerEnter,
         onPointerLeave,
         onWindowPointerDown,

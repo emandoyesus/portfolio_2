@@ -29,22 +29,25 @@ export default function ContactSection() {
       <div className="max-w-[1100px] mx-auto">
         <div className="bg-card border border-hairline p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
           {/* Interactive PixelBlast Liquid Ripple Canvas */}
-          <div className="absolute inset-0 z-0 pointer-events-auto opacity-85">
+          <div className="absolute inset-0 z-0 pointer-events-auto opacity-75">
             <PixelBlast
               className="w-full h-full"
-              variant="diamond"
-              pixelSize={7}
-              color="#4e5ee8"
-              patternScale={2.5}
-              patternDensity={1.25}
-              pixelSizeJitter={0.35}
+              variant="circle"
+              pixelSize={6}
+              color="#181c66"
+              patternScale={3}
+              patternDensity={1.2}
+              pixelSizeJitter={0.5}
               enableRipples
               rippleSpeed={0.4}
               rippleThickness={0.12}
-              rippleIntensityScale={2.5}
-              liquid={false}
-              speed={0.5}
-              edgeFade={0.3}
+              rippleIntensityScale={1.5}
+              liquid
+              liquidStrength={0.12}
+              liquidRadius={1.2}
+              liquidWobbleSpeed={5}
+              speed={0.6}
+              edgeFade={0.25}
               transparent
             />
           </div>
