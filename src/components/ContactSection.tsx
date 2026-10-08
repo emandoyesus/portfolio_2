@@ -33,7 +33,7 @@ export default function ContactSection() {
             <PixelBlast
               className="w-full h-full"
               variant="diamond"
-              pixelSize={7}
+              pixelSize={6}
               color="#181c66"
               patternScale={3}
               patternDensity={1.2}
