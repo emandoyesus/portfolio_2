@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Download } from "lucide-react";
 
 const navLinks = [
   { name: "Projects", href: "#projects" },
@@ -56,8 +56,21 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right: Availability badge & Mobile Toggle */}
+        {/* Right: Availability badge, CV Button & Mobile Toggle */}
         <div className="flex items-center gap-3">
+          {/* Download CV Navbar Link */}
+          <a
+            href="/cv.pdf"
+            download="Emandoyesus_Tesfaye_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Emandoyesus Tesfaye's CV"
+            className="hidden sm:inline-flex items-center gap-1.5 border border-hairline bg-surface/70 hover:border-hairline-strong hover:bg-card px-3 py-1 font-mono text-[11px] text-chalk transition-all duration-200 hover:text-accent"
+          >
+            <Download size={12} className="text-accent" />
+            <span>CV</span>
+          </a>
+
           {/* Subtle Work Availability Status */}
           <div className="hidden sm:inline-flex items-center gap-2 border border-hairline bg-surface/70 px-3 py-1 font-mono text-[11px] text-muted select-none">
             <span className="size-1.5 rounded-full bg-positive animate-pulse" />
@@ -92,6 +105,20 @@ export default function Navbar() {
                 <ArrowUpRight size={14} className="text-muted/60" />
               </a>
             ))}
+            <a
+              href="/cv.pdf"
+              download="Emandoyesus_Tesfaye_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center justify-between border-t border-hairline/30 pt-3 font-mono text-sm tracking-wider uppercase text-accent transition-colors"
+            >
+              <span className="flex items-center gap-2">
+                <Download size={14} />
+                Download CV
+              </span>
+              <ArrowUpRight size={14} className="text-accent/60" />
+            </a>
           </nav>
         </div>
       )}
