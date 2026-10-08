@@ -43,10 +43,10 @@ export default function ContactSection() {
               rippleThickness={0.12}
               rippleIntensityScale={1.5}
               liquid
-              liquidStrength={0.12}
+              liquidStrength={0.08}
               liquidRadius={1.2}
-              liquidWobbleSpeed={5}
-              speed={0.6}
+              liquidWobbleSpeed={2.8}
+              speed={0.35}
               edgeFade={0.25}
               transparent
             />
