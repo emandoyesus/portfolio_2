@@ -32,8 +32,8 @@ export default function ContactSection() {
           <div className="absolute inset-0 z-0 pointer-events-auto opacity-75">
             <PixelBlast
               className="w-full h-full"
-              variant="circle"
-              pixelSize={6}
+              variant="diamond"
+              pixelSize={7}
               color="#181c66"
               patternScale={3}
               patternDensity={1.2}
