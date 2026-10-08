@@ -11,7 +11,7 @@ export default function HeroSection() {
       className="relative flex w-full flex-col items-center gap-10 overflow-hidden px-6 pt-24 pb-12 sm:px-10 sm:pt-28 lg:gap-14"
     >
       {/* Interactive PixelBlast Liquid Ripple Canvas - Starting from the very top */}
-      <div className="absolute inset-0 z-0 pointer-events-auto opacity-75">
+      <div className="absolute inset-0 z-0 pointer-events-auto opacity-85">
         <PixelBlast
           className="w-full h-full"
           variant="diamond"
@@ -23,7 +23,7 @@ export default function HeroSection() {
           enableRipples
           rippleSpeed={0.4}
           rippleThickness={0.12}
-          rippleIntensityScale={2.2}
+          rippleIntensityScale={2.5}
           liquid={false}
           speed={0.55}
           edgeFade={0}
