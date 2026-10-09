@@ -65,10 +65,11 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Download Emandoyesus Tesfaye's CV"
-            className="hidden sm:inline-flex items-center gap-1.5 border border-hairline bg-surface/70 hover:border-hairline-strong hover:bg-card px-3 py-1 font-mono text-[11px] text-chalk transition-all duration-200 hover:text-accent"
+            className="inline-flex items-center gap-1.5 border border-hairline bg-surface/80 hover:border-hairline-strong hover:bg-card px-2.5 sm:px-3 py-1 font-mono text-[11px] text-chalk transition-all duration-200 hover:text-accent group"
           >
-            <Download size={12} className="text-accent" />
-            <span>CV</span>
+            <Download size={12} className="text-accent transition-transform duration-200 group-hover:-translate-y-0.5" />
+            <span className="hidden sm:inline">Download CV</span>
+            <span className="sm:hidden">CV</span>
           </a>
 
           {/* Subtle Work Availability Status */}

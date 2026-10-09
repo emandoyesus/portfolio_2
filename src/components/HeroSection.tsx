@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, ChevronDown, Download } from "lucide-react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import HeroTerminal from "@/components/HeroTerminal";
 import PixelBlast from "@/components/PixelBlast";
 
@@ -92,19 +92,6 @@ export default function HeroSection() {
               className="group/btn relative inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[15px] font-semibold text-ink bg-chalk hover:bg-white hover:shadow-[0_0_24px_rgba(46,55,148,0.5)] transition-all duration-300"
             >
               <span>Contact Now</span>
-            </a>
-
-            {/* Download CV Action Button */}
-            <a
-              href="/cv.pdf"
-              download="Emandoyesus_Tesfaye_CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download Emandoyesus Tesfaye's CV"
-              className="group/cv relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-[15px] font-semibold text-chalk border border-hairline bg-surface hover:border-hairline-strong hover:bg-card transition-all duration-300 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.8)]"
-            >
-              <Download className="size-4 text-accent transition-transform duration-300 group-hover/cv:translate-y-0.5" />
-              <span>Download CV</span>
             </a>
 
             {/* Hand-drawn decorative arrow pointing to CTA */}
