@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
-import HeroTerminal from "@/components/HeroTerminal";
 
 export default function HeroSection() {
   return (
@@ -85,9 +85,24 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Right: Interactive Live Engineering Terminal */}
-        <div className="relative w-full z-10 flex items-center justify-center pointer-events-auto">
-          <HeroTerminal />
+        {/* Right: Hero Portrait Illustration */}
+        <div className="relative w-full z-10 flex items-center justify-center lg:justify-end pointer-events-auto">
+          <div className="relative w-full max-w-[480px] lg:max-w-[540px] flex items-center justify-center">
+            {/* Ambient atmospheric cyan/blue glow */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -inset-6 bg-gradient-to-tr from-[#3d49b8]/20 via-[#26a0da]/15 to-transparent blur-3xl rounded-full opacity-60"
+            />
+
+            <Image
+              src="/emando-hero-figure.png"
+              alt="Emandoyesus Tesfaye — Full Stack Developer"
+              width={918}
+              height={916}
+              priority
+              className="relative z-10 w-full h-auto object-contain drop-shadow-[0_0_35px_rgba(38,160,218,0.2)] select-none pointer-events-none"
+            />
+          </div>
         </div>
       </div>
 

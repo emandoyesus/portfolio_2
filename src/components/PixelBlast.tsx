@@ -358,8 +358,11 @@ interface ThreeState {
   composer?: EffectComposer;
   touch?: ReturnType<typeof createTouchTexture>;
   liquidEffect?: Effect;
+  initialBlastTimeout?: ReturnType<typeof setTimeout>;
   onPointerEnter?: () => void;
   onPointerLeave?: () => void;
+  onWindowPointerDown?: (e: PointerEvent) => void;
+  onWindowPointerMove?: (e: PointerEvent) => void;
 }
 
 export default function PixelBlast({
