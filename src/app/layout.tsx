@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
-import SurveyBackground from "@/components/SurveyBackground";
+import BackgroundBeams from "@/components/ui/background-beams";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -44,8 +44,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="relative flex min-h-full flex-col bg-ink text-chalk">
-        {/* Architectural survey lattice with breathing crosshairs */}
-        <SurveyBackground />
+        {/* Aceternity Background Beams — animated page background */}
+        <BackgroundBeams />
 
         {/* Grain texture overlay */}
         <div aria-hidden="true" className="texture-grain" />

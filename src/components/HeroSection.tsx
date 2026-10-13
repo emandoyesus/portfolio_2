@@ -2,7 +2,6 @@
 
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import HeroTerminal from "@/components/HeroTerminal";
-import PixelBlast from "@/components/PixelBlast";
 
 export default function HeroSection() {
   return (
@@ -10,38 +9,6 @@ export default function HeroSection() {
       id="hero-section"
       className="relative flex w-full flex-col items-center gap-10 overflow-hidden px-6 pt-24 pb-12 sm:px-10 sm:pt-28 lg:gap-14"
     >
-      {/* Interactive PixelBlast Liquid Ripple Canvas - Starting from the very top */}
-      <div className="absolute inset-0 z-0 pointer-events-auto opacity-75">
-        <PixelBlast
-          className="w-full h-full"
-          variant="diamond"
-          pixelSize={6}
-          color="#181c66"
-          patternScale={3}
-          patternDensity={1.2}
-          pixelSizeJitter={0.5}
-          enableRipples
-          rippleSpeed={0.4}
-          rippleThickness={0.12}
-          rippleIntensityScale={1.5}
-          liquid
-          liquidStrength={0.08}
-          liquidRadius={1.2}
-          liquidWobbleSpeed={2.8}
-          speed={0.35}
-          edgeFade={0.25}
-          transparent
-        />
-        {/* Soft bottom transition mask to blend smoothly into the next section */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to bottom, transparent 0%, transparent 35%, rgba(8,8,8,0.3) 55%, rgba(8,8,8,0.75) 75%, rgba(8,8,8,0.96) 90%, #080808 100%)",
-          }}
-        />
-      </div>
-
       {/* Laser streak lines */}
       <div
         aria-hidden="true"
