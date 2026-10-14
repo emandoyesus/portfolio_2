@@ -23,16 +23,15 @@ export default function SurveyBackground() {
       {/* Subtle top ambient radial glow in matching navy blue */}
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[#181c66]/20 rounded-full blur-[120px]" />
 
-      {/* Breathing Survey Markers */}
+      {/* Static Survey Markers */}
       <div className="absolute inset-0 overflow-hidden">
         {surveyMarkers.map((marker, i) => (
           <span
             key={i}
-            className="absolute block text-white/30 animate-survey-breathe"
+            className="absolute block text-white/20"
             style={{
               left: marker.left,
               top: marker.top,
-              animationDelay: marker.delay,
               transform: `translate(-50%, -50%) scale(${marker.scale})`,
             }}
           >

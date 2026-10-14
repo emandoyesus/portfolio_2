@@ -44,10 +44,10 @@ export default function HeroSection() {
       id="hero-section"
       className="relative flex w-full flex-col items-center gap-10 overflow-hidden px-6 pt-24 pb-12 sm:px-10 sm:pt-28 lg:gap-14 bg-[#070a12]"
     >
-      {/* Dark navy architectural grid - subtle and deeper */}
+      {/* Dark navy architectural grid - crisp and prominent */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(46,65,130,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(46,65,130,0.08)_1px,transparent_1px)] bg-[size:110px_110px] [mask-image:radial-gradient(ellipse_110%_90%_at_50%_35%,#000_65%,transparent_100%)]"
+        className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(46,65,130,0.14)_1px,transparent_1px),linear-gradient(to_bottom,rgba(46,65,130,0.14)_1px,transparent_1px)] bg-[size:110px_110px] [mask-image:radial-gradient(ellipse_110%_90%_at_50%_35%,#000_75%,transparent_100%)]"
       />
 
       {/* Atmospheric subtle deep midnight wash on the right behind hero figure */}
