@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight, ExternalLink, CheckCircle2, Lock, Eye } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface RealProject {
   title: string;
@@ -22,7 +23,7 @@ const projects: RealProject[] = [
     category: "Fullstack Web & Admin Portal",
     url: "https://addisalemfilms.com",
     displayUrl: "addisalemfilms.com",
-    badge: "Live Production in Dessie",
+    badge: "Live Production in Mekelle",
     accentGradient: "from-indigo-950/70 via-stone-900 to-black",
     thumbnail: "/projects/addisalem-screen.png",
     tags: [
@@ -37,7 +38,7 @@ const projects: RealProject[] = [
       "Vercel",
     ],
     highlights: [
-      "Built and shipped a full production website for a film training academy in Dessie: programs, facilities, awards gallery, student portfolio, and online enrollment.",
+      "Built and shipped a full production website for a film training academy in Mekelle: programs, facilities, awards gallery, student portfolio, and online enrollment.",
       "Engineered a protected admin console using Firebase Auth and Firestore to manage site content dynamically, with images served via Cloudinary.",
       "Implemented prerendered routes and SEO / social-sharing metadata for blazing fast loads and clean link previews.",
     ],
@@ -77,7 +78,13 @@ export default function ProjectShowcase() {
       />
       <div className="max-w-[1250px] mx-auto">
         {/* Section Heading */}
-        <div className="flex flex-col items-center text-center max-w-[720px] mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center text-center max-w-[720px] mx-auto mb-16"
+        >
           <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3 font-mono">
             Featured Projects
           </p>
@@ -87,14 +94,23 @@ export default function ProjectShowcase() {
           <p className="font-sans text-base sm:text-lg text-muted">
             Real applications built and shipped to production for real users and organizations.
           </p>
-        </div>
+        </motion.div>
 
         {/* 2-Project Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-          {projects.map((project) => (
-            <div
+          {projects.map((project, index) => (
+            <motion.div
               key={project.title}
-              className="group/card flex flex-col justify-between bg-card p-6 sm:p-7 border border-hairline relative transition-all duration-300 hover:border-accent/40 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.9)]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.65,
+                ease: [0.16, 1, 0.3, 1],
+                delay: index * 0.15,
+              }}
+              whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="group/card flex flex-col justify-between bg-card p-6 sm:p-7 border border-hairline relative transition-colors duration-300 hover:border-accent/40 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.9)]"
             >
               <div>
                 {/* Browser Window Mockup Frame with Real Thumbnail */}
@@ -184,14 +200,14 @@ export default function ProjectShowcase() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] px-2.5 py-1 border border-hairline bg-surface/80 text-muted font-mono"
+                      className="text-[11px] px-2.5 py-1 border border-hairline bg-surface/80 text-muted font-mono transition-colors hover:text-chalk hover:border-accent/40"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

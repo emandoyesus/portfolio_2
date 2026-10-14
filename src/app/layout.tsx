@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "Android",
     "iOS",
     "Mekelle University",
-    "Dessie Ethiopia",
+    "Mekelle Ethiopia",
   ],
 };
 

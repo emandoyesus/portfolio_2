@@ -1,26 +1,52 @@
 "use client";
 
+import { motion } from "framer-motion";
+import TechIcon from "@/components/ui/tech-icons";
+
 const toolsBand1 = [
   "React",
   "Next.js",
   "TypeScript",
   "JavaScript",
+  "Svelte",
+  "Nest.js",
+  "Python",
+  "Java",
   "Node.js",
   "Express",
-  "NestJS",
-  "Python",
+  "FastAPI",
+  "Django",
+  "Flutter",
+  "React Native",
   "Tailwind CSS",
+  "C++",
+  "Dart",
+  "HTML5",
+  "CSS3",
 ];
 
 const toolsBand2 = [
   "PostgreSQL",
-  "MongoDB",
+  "Supabase",
   "Firebase",
-  "React Native",
+  "Redis",
+  "MongoDB",
+  "MySQL",
   "Docker",
+  "Kubernetes",
+  "Linux",
   "Git",
-  "REST APIs",
-  "GraphQL",
+  "GitHub Actions",
+  "AWS",
+  "Google Cloud",
+  "Azure",
+  "Terraform",
+  "Vercel",
+  "Postman",
+  "Jest",
+  "OpenAI",
+  "Google Gemini",
+  "LangChain",
 ];
 
 // Duplicate lists to guarantee seamless coverage across wide desktop displays
@@ -41,7 +67,13 @@ export default function ToolkitSection() {
       />
 
       <div className="shell max-w-[1240px] mx-auto px-6 sm:px-10 mb-12 sm:mb-16">
-        <div className="stack__head flex flex-col items-center text-center max-w-[700px] mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="stack__head flex flex-col items-center text-center max-w-[700px] mx-auto"
+        >
           <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3 font-mono">
             The Toolkit
           </p>
@@ -54,11 +86,17 @@ export default function ToolkitSection() {
           <p className="font-sans text-base sm:text-lg text-muted leading-relaxed max-w-[62ch]">
             What I reach for. None of it is evidence on its own — the two records above are the evidence, and this is only the shelf they came off.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Dual Infinite Marquee Bands with Gradient Edge Fades */}
-      <div className="stack__bands relative w-full flex flex-col gap-3 sm:gap-4 [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+        className="stack__bands relative w-full flex flex-col gap-3 sm:gap-4 [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]"
+      >
         {/* Band 1: Forward Marquee */}
         <div className="marquee overflow-hidden w-full">
           <div className="marquee__inner overflow-hidden w-full">
@@ -68,9 +106,9 @@ export default function ToolkitSection() {
                 {band1Items.map((tool, idx) => (
                   <li
                     key={`b1-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-4 py-2 sm:px-5 sm:py-2.5 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-xs sm:text-[13.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
+                    <TechIcon name={tool} className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
                     <span>{tool}</span>
                   </li>
                 ))}
@@ -80,9 +118,9 @@ export default function ToolkitSection() {
                 {band1Items.map((tool, idx) => (
                   <li
                     key={`b1-clone-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-4 py-2 sm:px-5 sm:py-2.5 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-xs sm:text-[13.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
+                    <TechIcon name={tool} className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
                     <span>{tool}</span>
                   </li>
                 ))}
@@ -103,9 +141,9 @@ export default function ToolkitSection() {
                 {band2Items.map((tool, idx) => (
                   <li
                     key={`b2-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-4 py-2 sm:px-5 sm:py-2.5 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-xs sm:text-[13.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
+                    <TechIcon name={tool} className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
                     <span>{tool}</span>
                   </li>
                 ))}
@@ -115,9 +153,9 @@ export default function ToolkitSection() {
                 {band2Items.map((tool, idx) => (
                   <li
                     key={`b2-clone-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-4 py-2 sm:px-5 sm:py-2.5 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-xs sm:text-[13.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
+                    <TechIcon name={tool} className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
                     <span>{tool}</span>
                   </li>
                 ))}
@@ -125,7 +163,7 @@ export default function ToolkitSection() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

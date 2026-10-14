@@ -8,6 +8,7 @@ import {
   Bot,
   CloudUpload,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -65,7 +66,13 @@ export default function ServicesSection() {
     <section id="services" className="relative z-10 py-24 sm:py-32 px-6 sm:px-10">
       <div className="max-w-[1200px] mx-auto">
         {/* Header */}
-        <div className="flex flex-col items-center text-center max-w-[700px] mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center text-center max-w-[700px] mx-auto mb-16"
+        >
           <p className="text-xs uppercase tracking-[0.25em] text-accent mb-3 font-mono">
             Core Competencies
           </p>
@@ -75,14 +82,26 @@ export default function ServicesSection() {
           <p className="font-sans text-base sm:text-lg text-muted">
             Direct capabilities and specialized engineering solutions for real-world products.
           </p>
-        </div>
+        </motion.div>
 
         {/* 3x2 Grid of Services */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((svc) => (
-            <div
+          {services.map((svc, index) => (
+            <motion.div
               key={svc.num}
-              className="group relative bg-card p-7 border border-hairline transition-all duration-300 hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_16px_36px_-12px_rgba(0,0,0,0.8)] flex flex-col justify-between"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.55,
+                ease: [0.16, 1, 0.3, 1],
+                delay: index * 0.08,
+              }}
+              whileHover={{
+                y: -5,
+                transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+              }}
+              className="group relative bg-card p-7 border border-hairline transition-colors duration-300 hover:border-accent/40 hover:shadow-[0_16px_36px_-12px_rgba(0,0,0,0.8)] flex flex-col justify-between"
             >
               <div>
                 {/* Header row */}
@@ -90,7 +109,7 @@ export default function ServicesSection() {
                   <span className="font-mono text-xs text-accent tracking-wider font-semibold">
                     {svc.num}
                   </span>
-                  <div className="grid size-9 place-items-center bg-surface border border-hairline text-muted group-hover:text-accent group-hover:border-accent/50 transition-colors">
+                  <div className="grid size-9 place-items-center bg-surface border border-hairline text-muted group-hover:text-accent group-hover:border-accent/50 group-hover:scale-105 transition-all">
                     <svc.icon size={16} />
                   </div>
                 </div>
@@ -111,13 +130,13 @@ export default function ServicesSection() {
                 {svc.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] px-2 py-0.5 border border-hairline text-muted font-mono bg-surface/50"
+                    className="text-[11px] px-2 py-0.5 border border-hairline text-muted font-mono bg-surface/50 transition-colors group-hover:text-chalk/80"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

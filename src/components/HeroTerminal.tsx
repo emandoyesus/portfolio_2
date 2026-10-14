@@ -14,36 +14,45 @@ export default function HeroTerminal() {
 
   // Skill categories start collapsed by default
   const [collapsedSkills, setCollapsedSkills] = useState<Record<string, boolean>>({
+    languages: true,
     frontend: true,
     backend: true,
     mobile: true,
-    databases: true,
+    databases_cloud: true,
+    devops_tools: true,
+    ai_integrations: true,
   });
 
   const staticFields = [
     { key: "engineer", value: "Emandoyesus Tesfaye" },
     { key: "role", value: "Full Stack Developer" },
-    { key: "location", value: "Dessie, Ethiopia" },
+    { key: "location", value: "Mekelle, Ethiopia" },
     { key: "education", value: "BSc. Software Engineering, Mekelle Univ." },
   ];
 
   const skillCategories: SkillCategory[] = [
-    { key: "frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
-    { key: "backend", items: ["Node.js", "Express", "Telegram bots"] },
-    { key: "mobile", items: ["Android", "iOS"] },
-    { key: "databases", items: ["SQL", "NoSQL", "Firestore"] },
+    { key: "languages", items: ["TypeScript", "JavaScript", "Python", "Dart", "Java", "C++", "HTML5", "CSS3"] },
+    { key: "frontend", items: ["React", "Next.js", "Svelte", "Tailwind CSS", "Redux", "Zustand"] },
+    { key: "backend", items: ["Node.js", "Express.js", "NestJS", "FastAPI", "Django", "REST APIs", "GraphQL"] },
+    { key: "mobile", items: ["Flutter", "React Native", "Expo / RN", "Android", "iOS"] },
+    { key: "databases_cloud", items: ["PostgreSQL", "Supabase", "Firebase", "Redis", "MongoDB", "MySQL", "AWS", "Google Cloud", "Azure", "Terraform"] },
+    { key: "devops_tools", items: ["Docker", "Kubernetes", "Linux", "Git", "GitHub Actions", "Vercel", "Postman", "VS Code", "Jest"] },
+    { key: "ai_integrations", items: ["OpenAI", "Google Gemini", "LangChain", "Payment APIs (Telebirr & CBE)", "Telegram bots"] },
   ];
 
   // Full formatted JSON string for copying
   const fullJsonData = {
     engineer: "Emandoyesus Tesfaye",
     role: "Full Stack Developer",
-    location: "Dessie, Ethiopia",
+    location: "Mekelle, Ethiopia",
     education: "BSc. Software Engineering, Mekelle Univ.",
-    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    backend: ["Node.js", "Express", "Telegram bots"],
-    mobile: ["Android", "iOS"],
-    databases: ["SQL", "NoSQL", "Firestore"],
+    languages: ["TypeScript", "JavaScript", "Python", "Dart", "Java", "C++", "HTML5", "CSS3"],
+    frontend: ["React", "Next.js", "Svelte", "Tailwind CSS", "Redux", "Zustand"],
+    backend: ["Node.js", "Express.js", "NestJS", "FastAPI", "Django", "REST APIs", "GraphQL"],
+    mobile: ["Flutter", "React Native", "Expo / RN", "Android", "iOS"],
+    databases_cloud: ["PostgreSQL", "Supabase", "Firebase", "Redis", "MongoDB", "MySQL", "AWS", "Google Cloud", "Azure", "Terraform"],
+    devops_tools: ["Docker", "Kubernetes", "Linux", "Git", "GitHub Actions", "Vercel", "Postman", "VS Code", "Jest"],
+    ai_integrations: ["OpenAI", "Google Gemini", "LangChain", "Payment APIs (Telebirr & CBE)", "Telegram bots"],
   };
 
   const jsonString = JSON.stringify(fullJsonData, null, 2);
@@ -66,10 +75,13 @@ export default function HeroTerminal() {
   const toggleAllSkills = () => {
     const nextState = !allCollapsed;
     setCollapsedSkills({
+      languages: nextState,
       frontend: nextState,
       backend: nextState,
       mobile: nextState,
-      databases: nextState,
+      databases_cloud: nextState,
+      devops_tools: nextState,
+      ai_integrations: nextState,
     });
   };
 
