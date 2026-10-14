@@ -127,14 +127,28 @@ export default function ServicesSection() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-1.5 pt-4 border-t border-hairline">
-                {svc.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[11px] px-2 py-0.5 border border-hairline text-muted font-mono bg-surface/50 transition-colors group-hover:text-chalk/80"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                {svc.tags.map((tag) =>
+                  tag === "Udacity Certified" ? (
+                    <a
+                      key={tag}
+                      href="https://www.udacity.com/certificate/e/bb376752-dca7-11f0-a400-13b8367e7372"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] px-2 py-0.5 border border-accent/40 text-accent font-mono bg-accent/5 hover:bg-accent/15 transition-colors inline-flex items-center gap-1"
+                      title="View Udacity Android Developer Fundamentals Certificate"
+                    >
+                      <span>{tag}</span>
+                      <span>↗</span>
+                    </a>
+                  ) : (
+                    <span
+                      key={tag}
+                      className="text-[11px] px-2 py-0.5 border border-hairline text-muted font-mono bg-surface/50 transition-colors group-hover:text-chalk/80"
+                    >
+                      {tag}
+                    </span>
+                  )
+                )}
               </div>
             </motion.div>
           ))}

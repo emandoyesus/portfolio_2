@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
-import BackgroundBeams from "@/components/ui/background-beams";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
+const playfair = localFont({
+  src: "./fonts/PlayfairDisplay-latin.woff2",
   variable: "--font-playfair",
   display: "swap",
+  weight: "400 900",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "./fonts/Inter-latin.woff2",
   variable: "--font-inter",
   display: "swap",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -44,9 +45,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="relative flex min-h-full flex-col bg-ink text-chalk">
-        {/* Aceternity Background Beams — animated page background */}
-        <BackgroundBeams />
-
         {/* Grain texture overlay */}
         <div aria-hidden="true" className="texture-grain" />
 

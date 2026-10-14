@@ -15,126 +15,50 @@ import {
   Code2,
   Terminal,
   ExternalLink,
-  Layers,
-  Server,
-  Smartphone,
-  Database,
-  Wrench,
-  Cpu,
-  Sparkles,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TelegramIcon } from "@/components/ui/social-links";
-import TechIcon from "@/components/ui/tech-icons";
 
 export default function ProfileSection() {
   const [activeTab, setActiveTab] = useState<"about" | "stack" | "education">("about");
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
-  const skillCategories = [
+  const skillGroups = [
     {
-      id: "languages",
-      title: "Languages",
-      icon: Code2,
-      count: "8 TECHNOLOGIES",
-      description: "Core programming languages utilized for web, mobile, algorithms, and backend systems.",
-      skills: [
-        { name: "JavaScript", hint: "ES6+, Async, DOM" },
-        { name: "TypeScript", hint: "Type Systems & Interfaces" },
-        { name: "Python", hint: "Backend, Scripting & AI" },
-        { name: "Dart", hint: "Cross-Platform Mobile" },
-        { name: "Java", hint: "OOP & Android Fundamentals" },
-        { name: "C++", hint: "Algorithms & Low-Level Systems" },
-        { name: "HTML5", hint: "Semantic Web & Accessibility" },
-        { name: "CSS3", hint: "Modern Layouts & Animations" },
-      ],
+      category: "Frontend",
+      skills: ["React", "Next.js", "Svelte", "TypeScript", "JavaScript", "Tailwind CSS", "Vite", "React Router"],
     },
     {
-      id: "frameworks",
-      title: "Frameworks & Libraries",
-      icon: Layers,
-      count: "10 TECHNOLOGIES",
-      description: "Modern client and state frameworks powering responsive UI and scalable client architectures.",
-      skills: [
-        { name: "React", hint: "Component Architecture & Hooks" },
-        { name: "Next.js", hint: "App Router, SSR & ISR" },
-        { name: "Svelte", hint: "Reactivity & Micro-bundles" },
-        { name: "Tailwind CSS", hint: "Design Tokens & Responsive UI" },
-        { name: "Redux", hint: "Predictable State Containers" },
-        { name: "Zustand", hint: "Minimalist Reactive State" },
-        { name: "Vite", hint: "Fast Bundling & HMR" },
-        { name: "Flutter", hint: "Cross-Platform Mobile UI" },
-        { name: "React Native", hint: "Native Mobile Apps" },
-        { name: "Expo", hint: "EAS Cloud & Native Tools" },
-      ],
+      category: "Backend & Systems",
+      skills: ["Nest.js", "Node.js", "Express", "Python", "Java", "RESTful APIs", "Telegram bots"],
     },
     {
-      id: "backend",
-      title: "Backend & APIs",
-      icon: Server,
-      count: "7 TECHNOLOGIES",
-      description: "High-performance services, enterprise TypeScript microservices, and secure API contracts.",
-      skills: [
-        { name: "Node.js", hint: "Event-Driven Server Runtime" },
-        { name: "Express.js", hint: "REST APIs & Middleware" },
-        { name: "NestJS", hint: "Enterprise TypeScript Architecture" },
-        { name: "FastAPI", hint: "Async Python Endpoints" },
-        { name: "Django", hint: "Batteries-Included Services" },
-        { name: "RESTful APIs", hint: "Contract-First Architecture" },
-        { name: "GraphQL", hint: "Typed Schema Queries" },
-      ],
+      category: "Mobile",
+      skills: ["Flutter", "React Native", "Android Development", "iOS Development"],
     },
     {
-      id: "databases",
-      title: "Databases & Cloud",
-      icon: Database,
-      count: "10 TECHNOLOGIES",
-      description: "Distributed databases, cloud providers, and infrastructure-as-code platforms.",
-      skills: [
-        { name: "PostgreSQL", hint: "Row-Level Security & Indexing" },
-        { name: "Supabase", hint: "Cloud Postgres & Auth" },
-        { name: "Firebase", hint: "Firestore & BaaS Suite" },
-        { name: "Redis", hint: "In-Memory Cache & Queues" },
-        { name: "MongoDB", hint: "Document Store & Aggregation" },
-        { name: "MySQL", hint: "Relational Storage" },
-        { name: "AWS", hint: "S3, EC2, Lambda & IAM" },
-        { name: "Google Cloud", hint: "Cloud Run & GCP Services" },
-        { name: "Azure", hint: "Enterprise Cloud Compute" },
-        { name: "Terraform", hint: "Infrastructure as Code" },
-      ],
+      category: "Databases & BaaS",
+      skills: ["MongoDB", "PostgreSQL", "Supabase", "Firebase", "SQL", "NoSQL", "Firestore"],
     },
     {
-      id: "devops",
-      title: "Tools, DevOps & Testing",
-      icon: Wrench,
-      count: "10 TECHNOLOGIES",
-      description: "Containerization, CI/CD pipelines, version control, and developer toolchain.",
-      skills: [
-        { name: "Docker", hint: "Multi-Stage Containers" },
-        { name: "Kubernetes", hint: "Cluster Orchestration" },
-        { name: "Linux", hint: "Production Server OS & Bash" },
-        { name: "Git", hint: "Version Control & Branching" },
-        { name: "GitHub", hint: "Collaboration & PR Workflows" },
-        { name: "GitHub Actions", hint: "Automated CI/CD Pipelines" },
-        { name: "Vercel", hint: "Edge Deployment & Previews" },
-        { name: "Postman", hint: "API Testing & Automation" },
-        { name: "VS Code", hint: "Developer Environment" },
-        { name: "Jest", hint: "Unit & Integration Testing" },
-      ],
+      category: "DevOps & Tools",
+      skills: ["Render", "Docker", "Linux", "Postman", "Git & GitHub", "Vercel", "Cloudinary", "EmailJS"],
+    },
+  ];
+
+  const certificates = [
+    {
+      title: "Android Developer Fundamentals",
+      issuer: "Udacity Nanodegree",
+      description: "Native Android application architecture, UI layouts, local storage, and background processing.",
+      date: "Feb 2026",
+      url: "https://www.udacity.com/certificate/e/bb376752-dca7-11f0-a400-13b8367e7372",
     },
     {
-      id: "ai",
-      title: "AI & Integrations",
-      icon: Cpu,
-      count: "5 TECHNOLOGIES",
-      description: "LLMs, API orchestrations, autonomous bot systems, and financial payment escrows.",
-      skills: [
-        { name: "OpenAI", hint: "Function Calling & Embeddings" },
-        { name: "Google Gemini", hint: "Multimodal AI & Reasoning" },
-        { name: "LangChain", hint: "Agent Workflows & Tool Use" },
-        { name: "Payment APIs", hint: "Telebirr & CBE Escrow" },
-        { name: "Telegram Bot API", hint: "Bots & WebApp Integrations" },
-      ],
+      title: "Programming Fundamentals",
+      issuer: "Udacity Nanodegree",
+      description: "Core programming paradigms, problem-solving, modular code structures, and debugging.",
+      date: "Dec 2025",
+      url: "https://www.udacity.com/certificate/e/3c56be12-dca0-11f0-9964-1b6de304da39",
     },
   ];
 
@@ -436,106 +360,28 @@ export default function ProfileSection() {
               )}
 
               {activeTab === "stack" && (
-                <div className="space-y-5" id="stack">
-                  {/* Category Filter & Stats Bar */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-hairline/70">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-xs uppercase text-accent font-semibold tracking-wider">
-                          50 Technologies
+                <div className="space-y-6" id="stack">
+                  <p className="font-sans text-sm text-muted">
+                    Full technical competencies extracted directly from production projects and engineering coursework:
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {skillGroups.map((grp) => (
+                      <div key={grp.category} className="p-4 bg-surface/60 border border-hairline">
+                        <span className="block text-xs font-mono uppercase text-accent mb-2">
+                          {grp.category}
                         </span>
-                        <span className="size-1 rounded-full bg-accent/60" />
-                        <span className="text-xs text-chalk/90 font-mono">Production &amp; Systems</span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {grp.skills.map((skill) => (
+                            <span
+                              key={skill}
+                              className="text-xs px-2 py-1 bg-card border border-hairline text-chalk font-mono"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                      <p className="text-xs text-muted font-sans mt-0.5">
-                        Extracted directly from production projects and engineering coursework.
-                      </p>
-                    </div>
-
-                    {/* Filter Pills */}
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      {[
-                        { id: "all", label: "All" },
-                        { id: "languages", label: "Languages" },
-                        { id: "frameworks", label: "Frameworks" },
-                        { id: "backend", label: "Backend" },
-                        { id: "databases", label: "Databases" },
-                        { id: "devops", label: "DevOps" },
-                        { id: "ai", label: "AI" },
-                      ].map((filter) => (
-                        <button
-                          key={filter.id}
-                          type="button"
-                          onClick={() => setSelectedCategory(filter.id)}
-                          className={`px-2.5 py-1 text-[11px] font-mono transition-all rounded-sm ${
-                            selectedCategory === filter.id
-                              ? "bg-accent/20 text-accent border border-accent/50 font-semibold shadow-[0_0_12px_rgba(112,126,255,0.2)]"
-                              : "text-muted hover:text-chalk hover:bg-surface border border-hairline/60"
-                          }`}
-                        >
-                          {filter.label}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Categorized Cards List */}
-                  <div className="space-y-4 max-h-[580px] sm:max-h-[640px] overflow-y-auto pr-1.5 [scrollbar-width:thin] [scrollbar-color:rgba(112,126,255,0.3)_transparent]">
-                    {skillCategories
-                      .filter((cat) => selectedCategory === "all" || selectedCategory === cat.id)
-                      .map((cat) => {
-                        const CatIcon = cat.icon;
-                        return (
-                          <div
-                            key={cat.id}
-                            className="p-4 sm:p-5 bg-surface/50 border border-hairline hover:border-hairline/90 transition-all rounded-sm"
-                          >
-                            {/* Card Header */}
-                            <div className="flex items-start justify-between gap-3 mb-2">
-                              <div className="flex items-center gap-2.5">
-                                <div className="p-1.5 border border-hairline bg-card rounded-sm text-accent">
-                                  <CatIcon size={16} />
-                                </div>
-                                <h4 className="font-sans text-base font-bold text-chalk">
-                                  {cat.title}
-                                </h4>
-                              </div>
-                              <span className="font-mono text-[10px] tracking-wider uppercase text-accent border border-accent/30 px-2 py-0.5 bg-accent/5 rounded-sm">
-                                {cat.count}
-                              </span>
-                            </div>
-
-                            {/* Card Description */}
-                            <p className="text-xs text-muted font-sans leading-relaxed mb-3.5">
-                              {cat.description}
-                            </p>
-
-                            <div className="h-px w-full bg-hairline/70 mb-3.5" />
-
-                            {/* Skill Badges with Official Brand Icons */}
-                            <div className="flex flex-wrap gap-2">
-                              {cat.skills.map((skill) => (
-                                <div
-                                  key={skill.name}
-                                  className="group relative inline-flex items-center gap-2 px-2.5 py-1.5 bg-card border border-hairline hover:border-accent/60 hover:bg-surface transition-all rounded-sm cursor-default select-none shadow-sm"
-                                  title={`${skill.name} — ${skill.hint}`}
-                                >
-                                  <TechIcon
-                                    name={skill.name}
-                                    className="size-3.5 shrink-0 transition-transform duration-200 group-hover:scale-110"
-                                  />
-                                  <span className="font-mono text-xs text-chalk/90 font-medium group-hover:text-chalk">
-                                    {skill.name}
-                                  </span>
-                                  <span className="hidden xl:inline-block font-sans text-[10.5px] text-muted/70 group-hover:text-accent/90 transition-colors">
-                                    • {skill.hint}
-                                  </span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
+                    ))}
                   </div>
                 </div>
               )}
@@ -570,29 +416,38 @@ export default function ProfileSection() {
                       <span>Certified Nanodegrees</span>
                     </h5>
                     <div className="space-y-3">
-                      <div className="p-4 border border-hairline bg-surface/30 flex items-start justify-between gap-4">
-                        <div>
-                          <p className="text-sm font-semibold text-chalk">
-                            Android Developer Fundamentals
-                          </p>
-                          <p className="text-xs text-muted font-sans mt-0.5">
-                            Udacity Nanodegree • Native Android application architecture, UI layouts, local storage, and background processing.
-                          </p>
-                        </div>
-                        <span className="text-xs font-mono text-accent shrink-0">Feb 2026</span>
-                      </div>
-
-                      <div className="p-4 border border-hairline bg-surface/30 flex items-start justify-between gap-4">
-                        <div>
-                          <p className="text-sm font-semibold text-chalk">
-                            Programming Fundamentals
-                          </p>
-                          <p className="text-xs text-muted font-sans mt-0.5">
-                            Udacity Nanodegree • Core programming paradigms, problem-solving, modular code structures, and debugging.
-                          </p>
-                        </div>
-                        <span className="text-xs font-mono text-accent shrink-0">Dec 2025</span>
-                      </div>
+                      {certificates.map((cert) => (
+                        <a
+                          key={cert.title}
+                          href={cert.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group relative block p-4 border border-hairline bg-surface/30 hover:bg-surface/70 hover:border-accent/60 transition-all duration-300 overflow-hidden"
+                        >
+                          {/* Ambient top highlight on hover */}
+                          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className="flex items-start justify-between gap-4">
+                            <div className="space-y-1">
+                              <p className="text-sm font-semibold text-chalk group-hover:text-accent transition-colors flex items-center gap-1.5">
+                                <span>{cert.title}</span>
+                                <ExternalLink size={13} className="text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                              </p>
+                              <p className="text-xs text-muted font-sans leading-relaxed">
+                                {cert.issuer} • {cert.description}
+                              </p>
+                              <div className="pt-1 flex items-center gap-2">
+                                <span className="inline-flex items-center gap-1 text-[11px] font-mono text-accent/80 group-hover:text-accent transition-colors">
+                                  <span>Verify Certificate</span>
+                                  <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
+                                </span>
+                              </div>
+                            </div>
+                            <span className="text-xs font-mono text-accent shrink-0 px-2 py-0.5 border border-accent/30 bg-accent/5">
+                              {cert.date}
+                            </span>
+                          </div>
+                        </a>
+                      ))}
                     </div>
                   </div>
 

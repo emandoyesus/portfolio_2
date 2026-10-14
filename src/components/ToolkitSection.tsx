@@ -1,52 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TechIcon from "@/components/ui/tech-icons";
 
 const toolsBand1 = [
   "React",
   "Next.js",
   "TypeScript",
-  "JavaScript",
   "Svelte",
   "Nest.js",
   "Python",
   "Java",
   "Node.js",
   "Express",
-  "FastAPI",
-  "Django",
   "Flutter",
-  "React Native",
   "Tailwind CSS",
-  "C++",
-  "Dart",
-  "HTML5",
-  "CSS3",
 ];
 
 const toolsBand2 = [
+  "MongoDB",
   "PostgreSQL",
   "Supabase",
   "Firebase",
-  "Redis",
-  "MongoDB",
-  "MySQL",
+  "Render",
   "Docker",
-  "Kubernetes",
   "Linux",
-  "Git",
-  "GitHub Actions",
-  "AWS",
-  "Google Cloud",
-  "Azure",
-  "Terraform",
-  "Vercel",
   "Postman",
-  "Jest",
-  "OpenAI",
-  "Google Gemini",
-  "LangChain",
+  "React Native",
+  "Git",
+  "REST APIs",
 ];
 
 // Duplicate lists to guarantee seamless coverage across wide desktop displays
@@ -106,9 +87,9 @@ export default function ToolkitSection() {
                 {band1Items.map((tool, idx) => (
                   <li
                     key={`b1-${tool}-${idx}`}
-                    className="marquee__item px-4 py-2 sm:px-5 sm:py-2.5 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-xs sm:text-[13.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <TechIcon name={tool} className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
                     <span>{tool}</span>
                   </li>
                 ))}
@@ -118,9 +99,9 @@ export default function ToolkitSection() {
                 {band1Items.map((tool, idx) => (
                   <li
                     key={`b1-clone-${tool}-${idx}`}
-                    className="marquee__item px-4 py-2 sm:px-5 sm:py-2.5 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-xs sm:text-[13.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <TechIcon name={tool} className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
                     <span>{tool}</span>
                   </li>
                 ))}
@@ -141,9 +122,9 @@ export default function ToolkitSection() {
                 {band2Items.map((tool, idx) => (
                   <li
                     key={`b2-${tool}-${idx}`}
-                    className="marquee__item px-4 py-2 sm:px-5 sm:py-2.5 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-xs sm:text-[13.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <TechIcon name={tool} className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
                     <span>{tool}</span>
                   </li>
                 ))}
@@ -153,9 +134,9 @@ export default function ToolkitSection() {
                 {band2Items.map((tool, idx) => (
                   <li
                     key={`b2-clone-${tool}-${idx}`}
-                    className="marquee__item px-4 py-2 sm:px-5 sm:py-2.5 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-xs sm:text-[13.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                   >
-                    <TechIcon name={tool} className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
                     <span>{tool}</span>
                   </li>
                 ))}

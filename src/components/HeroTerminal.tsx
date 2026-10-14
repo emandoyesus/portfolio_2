@@ -14,13 +14,11 @@ export default function HeroTerminal() {
 
   // Skill categories start collapsed by default
   const [collapsedSkills, setCollapsedSkills] = useState<Record<string, boolean>>({
-    languages: true,
     frontend: true,
     backend: true,
     mobile: true,
-    databases_cloud: true,
-    devops_tools: true,
-    ai_integrations: true,
+    databases: true,
+    tools: true,
   });
 
   const staticFields = [
@@ -31,13 +29,11 @@ export default function HeroTerminal() {
   ];
 
   const skillCategories: SkillCategory[] = [
-    { key: "languages", items: ["TypeScript", "JavaScript", "Python", "Dart", "Java", "C++", "HTML5", "CSS3"] },
-    { key: "frontend", items: ["React", "Next.js", "Svelte", "Tailwind CSS", "Redux", "Zustand"] },
-    { key: "backend", items: ["Node.js", "Express.js", "NestJS", "FastAPI", "Django", "REST APIs", "GraphQL"] },
-    { key: "mobile", items: ["Flutter", "React Native", "Expo / RN", "Android", "iOS"] },
-    { key: "databases_cloud", items: ["PostgreSQL", "Supabase", "Firebase", "Redis", "MongoDB", "MySQL", "AWS", "Google Cloud", "Azure", "Terraform"] },
-    { key: "devops_tools", items: ["Docker", "Kubernetes", "Linux", "Git", "GitHub Actions", "Vercel", "Postman", "VS Code", "Jest"] },
-    { key: "ai_integrations", items: ["OpenAI", "Google Gemini", "LangChain", "Payment APIs (Telebirr & CBE)", "Telegram bots"] },
+    { key: "frontend", items: ["React", "Next.js", "Svelte", "TypeScript", "Tailwind CSS"] },
+    { key: "backend", items: ["Nest.js", "Node.js", "Express", "Python", "Java", "Telegram bots"] },
+    { key: "mobile", items: ["Flutter", "React Native", "Android", "iOS"] },
+    { key: "databases", items: ["MongoDB", "PostgreSQL", "Supabase", "Firebase", "SQL"] },
+    { key: "tools", items: ["Render", "Docker", "Linux", "Postman", "Git"] },
   ];
 
   // Full formatted JSON string for copying
@@ -46,13 +42,11 @@ export default function HeroTerminal() {
     role: "Full Stack Developer",
     location: "Mekelle, Ethiopia",
     education: "BSc. Software Engineering, Mekelle Univ.",
-    languages: ["TypeScript", "JavaScript", "Python", "Dart", "Java", "C++", "HTML5", "CSS3"],
-    frontend: ["React", "Next.js", "Svelte", "Tailwind CSS", "Redux", "Zustand"],
-    backend: ["Node.js", "Express.js", "NestJS", "FastAPI", "Django", "REST APIs", "GraphQL"],
-    mobile: ["Flutter", "React Native", "Expo / RN", "Android", "iOS"],
-    databases_cloud: ["PostgreSQL", "Supabase", "Firebase", "Redis", "MongoDB", "MySQL", "AWS", "Google Cloud", "Azure", "Terraform"],
-    devops_tools: ["Docker", "Kubernetes", "Linux", "Git", "GitHub Actions", "Vercel", "Postman", "VS Code", "Jest"],
-    ai_integrations: ["OpenAI", "Google Gemini", "LangChain", "Payment APIs (Telebirr & CBE)", "Telegram bots"],
+    frontend: ["React", "Next.js", "Svelte", "TypeScript", "Tailwind CSS"],
+    backend: ["Nest.js", "Node.js", "Express", "Python", "Java", "Telegram bots"],
+    mobile: ["Flutter", "React Native", "Android", "iOS"],
+    databases: ["MongoDB", "PostgreSQL", "Supabase", "Firebase", "SQL"],
+    tools: ["Render", "Docker", "Linux", "Postman", "Git"],
   };
 
   const jsonString = JSON.stringify(fullJsonData, null, 2);
@@ -75,13 +69,11 @@ export default function HeroTerminal() {
   const toggleAllSkills = () => {
     const nextState = !allCollapsed;
     setCollapsedSkills({
-      languages: nextState,
       frontend: nextState,
       backend: nextState,
       mobile: nextState,
-      databases_cloud: nextState,
-      devops_tools: nextState,
-      ai_integrations: nextState,
+      databases: nextState,
+      tools: nextState,
     });
   };
 

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import RollingTextButton from "@/components/ui/button-rolling-text";
 import AddToBasketButton from "@/components/ui/button-add-to-basket";
 import SocialLinks from "@/components/ui/social-links";
+import { BsFiletypePdf } from "react-icons/bs";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -120,27 +121,19 @@ export default function HeroSection() {
             {/* Contact Now Button with Interactive Send Animation */}
             <AddToBasketButton href="#contact" label="Contact Now" />
 
-            {/* Hand-drawn decorative arrow pointing to CTA */}
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 148 56"
-              fill="none"
-              className="pointer-events-none text-[#4d5bd6] hidden w-[90px] -translate-y-2 sm:block opacity-75"
+            {/* Download Resume Button styled strictly in the site design */}
+            <motion.a
+              href="/cv.pdf"
+              download="Emandoyesus_Tesfaye_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-[15px] font-semibold text-chalk border border-hairline bg-surface hover:border-accent/60 hover:bg-card hover:text-accent transition-all duration-300 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.8)] select-none cursor-pointer"
             >
-              <path
-                d="M140 8 C 104 12, 58 26, 20 46"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-              <path
-                d="M38 48 L18 45 L28 28"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+              <BsFiletypePdf className="size-4 text-accent transition-transform duration-200 group-hover:scale-110" />
+              <span>Download Resume</span>
+            </motion.a>
           </motion.div>
 
           {/* Social Links: GitHub, LinkedIn, Telegram, Email */}

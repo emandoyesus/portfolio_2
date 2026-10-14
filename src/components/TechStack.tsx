@@ -19,6 +19,7 @@ const techRow2 = [
   "MongoDB",
   "Firebase",
   "React Native",
+  "Render",
   "Docker",
   "Git",
   "REST APIs",
