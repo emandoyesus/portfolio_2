@@ -296,7 +296,7 @@ export default function ProfileSection() {
                       I&apos;m a full-stack developer and a Software Engineering student at Mekelle University. I build practical, fast web applications with React, Next.js, TypeScript, Node.js and Express, and I also develop mobile apps for Android and iOS.
                     </p>
                     <p className="font-sans text-base text-muted leading-relaxed">
-                      My work ranges from a movie-discovery app powered by the TMDB API to a production website with an admin console for a real organization in Mekelle. I care about clean interfaces, reliable code and shipping work people actually use.
+                      My work ranges from a movie-discovery app powered by the TMDB API to a production website with an admin console for a real organization in Dessie. I care about clean interfaces, reliable code and shipping work people actually use.
                     </p>
                   </div>
 

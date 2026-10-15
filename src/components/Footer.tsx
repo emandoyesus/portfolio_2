@@ -186,9 +186,6 @@ export default function Footer() {
         {/* Bottom Credits & Legal */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted">
           <span>&copy; {currentYear} Emandoyesus Tesfaye. All rights reserved.</span>
-          <span className="text-accent/80 text-center sm:text-right">
-            MEKELLE UNIVERSITY • SOFTWARE ENGINEERING • BUILT WITH NEXT.JS
-          </span>
         </div>
       </div>
     </motion.footer>

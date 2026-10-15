@@ -23,7 +23,7 @@ const projects: RealProject[] = [
     category: "Fullstack Web & Admin Portal",
     url: "https://addisalemfilms.com",
     displayUrl: "addisalemfilms.com",
-    badge: "Live Production in Mekelle",
+    badge: "Live Production in Dessie",
     accentGradient: "from-indigo-950/70 via-stone-900 to-black",
     thumbnail: "/projects/addisalem-screen.png",
     tags: [
@@ -38,7 +38,7 @@ const projects: RealProject[] = [
       "Vercel",
     ],
     highlights: [
-      "Built and shipped a full production website for a film training academy in Mekelle: programs, facilities, awards gallery, student portfolio, and online enrollment.",
+      "Built and shipped a full production website for a film training academy in Dessie: programs, facilities, awards gallery, student portfolio, and online enrollment.",
       "Engineered a protected admin console using Firebase Auth and Firestore to manage site content dynamically, with images served via Cloudinary.",
       "Implemented prerendered routes and SEO / social-sharing metadata for blazing fast loads and clean link previews.",
     ],
