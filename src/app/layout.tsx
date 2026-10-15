@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import SurveyBackground from "@/components/SurveyBackground";
 import "./globals.css";
 
 const playfair = localFont({
@@ -46,8 +45,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <body className="relative flex min-h-full flex-col bg-ink text-chalk">
-        {/* Architectural static survey lattice grid */}
-        <SurveyBackground />
+        {/* Exact Architectural Hero Grid applied globally across all sections */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,rgba(46,65,130,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(46,65,130,0.15)_1px,transparent_1px)] bg-[size:110px_110px]"
+        />
 
         {/* Grain texture overlay */}
         <div aria-hidden="true" className="texture-grain" />

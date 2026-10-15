@@ -58,7 +58,7 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="relative z-10 border-t border-hairline bg-[#06080e] pt-16 pb-12 px-6 sm:px-10 overflow-hidden"
+      className="relative z-10 border-t border-hairline bg-[#06080e]/80 backdrop-blur-[2px] pt-16 pb-12 px-6 sm:px-10 overflow-hidden"
     >
       {/* Subtle atmospheric ambient glow */}
       <div
