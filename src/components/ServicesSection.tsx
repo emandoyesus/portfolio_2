@@ -10,14 +10,26 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
-const services = [
+interface ServiceItem {
+  num: string;
+  title: string;
+  icon: typeof Globe;
+  description: string;
+  tags: string[];
+  certUrl?: string;
+  certTitle?: string;
+}
+
+const services: ServiceItem[] = [
   {
     num: "01",
     title: "Fullstack Websites & Web Apps",
     icon: Globe,
     description:
-      "Engineering fast, responsive, and SEO-optimized production web applications using React, Next.js, Vite, TypeScript, and modern Tailwind CSS.",
-    tags: ["React 19", "Next.js", "TypeScript", "Tailwind CSS", "Vite"],
+      "Engineering fast, responsive, and SEO-optimized production web applications using React, Next.js, Vite, TypeScript, and modern Tailwind CSS (Udacity verified).",
+    tags: ["React 19", "Next.js", "TypeScript", "Tailwind CSS", "Udacity Verified"],
+    certUrl: "https://www.udacity.com/certificate/e/3c56be12-dca0-11f0-9964-1b6de304da39",
+    certTitle: "View Udacity Programming Fundamentals Certificate",
   },
   {
     num: "02",
@@ -26,6 +38,8 @@ const services = [
     description:
       "Developing native and cross-platform mobile applications with clean architecture, fluid animations, and reliable offline capabilities (Udacity certified).",
     tags: ["Android", "iOS", "React Native", "Udacity Certified"],
+    certUrl: "https://www.udacity.com/certificate/e/bb376752-dca7-11f0-a400-13b8367e7372",
+    certTitle: "View Udacity Android Developer Fundamentals Certificate",
   },
   {
     num: "03",
@@ -128,14 +142,14 @@ export default function ServicesSection() {
               {/* Tags */}
               <div className="flex flex-wrap gap-1.5 pt-4 border-t border-hairline">
                 {svc.tags.map((tag) =>
-                  tag === "Udacity Certified" ? (
+                  tag === "Udacity Certified" || tag === "Udacity Verified" ? (
                     <a
                       key={tag}
-                      href="https://www.udacity.com/certificate/e/bb376752-dca7-11f0-a400-13b8367e7372"
+                      href={svc.certUrl || "https://www.udacity.com/certificate/e/3c56be12-dca0-11f0-9964-1b6de304da39"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[11px] px-2 py-0.5 border border-accent/40 text-accent font-mono bg-accent/5 hover:bg-accent/15 transition-colors inline-flex items-center gap-1"
-                      title="View Udacity Android Developer Fundamentals Certificate"
+                      title={svc.certTitle || "View Udacity Certificate"}
                     >
                       <span>{tag}</span>
                       <span>↗</span>
