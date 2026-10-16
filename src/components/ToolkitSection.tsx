@@ -66,7 +66,7 @@ export default function ToolkitSection() {
             The toolkit.
           </h2>
           <p className="font-sans text-base sm:text-lg text-muted leading-relaxed max-w-[62ch]">
-            What I reach for. None of it is evidence on its own — the two records above are the evidence, and this is only the shelf they came off.
+            What I reach for. None of it is evidence on its own — the records above are the evidence, and this is only the shelf they came off.
           </p>
         </motion.div>
       </div>
