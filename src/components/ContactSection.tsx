@@ -237,7 +237,7 @@ export default function ContactSection() {
                       type="submit"
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full bg-chalk text-ink hover:bg-white hover:shadow-[0_0_24px_rgba(46,55,148,0.5)] py-3.5 px-6 font-semibold text-sm inline-flex items-center justify-center gap-2 transition-all mt-2 cursor-pointer"
+                      className="w-full bg-chalk text-ink dark:hover:bg-white hover:bg-chalk/90 hover:shadow-[0_0_24px_rgba(46,55,148,0.4)] py-3.5 px-6 font-semibold text-sm inline-flex items-center justify-center gap-2 transition-all mt-2 cursor-pointer"
                     >
                       {sent ? (
                         <span className="inline-flex items-center gap-2 text-ink font-semibold">

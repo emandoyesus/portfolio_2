@@ -107,12 +107,12 @@ export default function Footer() {
         <motion.footer
           ref={contentRef}
           style={{ y, opacity, scale }}
-          className="relative w-full border-t border-hairline dark:bg-black bg-slate-100/95 pt-16 pb-12 px-6 sm:px-10 overflow-hidden shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.15)] dark:shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.95)]"
+          className="relative w-full border-t border-hairline dark:bg-black bg-surface/95 pt-16 pb-12 px-6 sm:px-10 overflow-hidden shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.08)] dark:shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.95)]"
         >
           {/* Top Curtain Shadow: soft physical depth illusion as page slides off */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute top-0 left-0 right-0 h-10 bg-gradient-to-b dark:from-black/60 from-slate-300/30 to-transparent z-10"
+            className="pointer-events-none absolute top-0 left-0 right-0 h-10 bg-gradient-to-b dark:from-black/60 from-black/[0.04] to-transparent z-10"
           />
 
           <div className="max-w-[1200px] mx-auto flex flex-col gap-10">

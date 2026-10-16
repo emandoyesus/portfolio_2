@@ -110,7 +110,7 @@ export default function ProjectShowcase() {
                 delay: index * 0.15,
               }}
               whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
-              className="group/card flex flex-col justify-between bg-card p-6 sm:p-7 border border-hairline relative transition-colors duration-300 hover:border-accent/40 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.9)]"
+              className="group/card flex flex-col justify-between bg-card p-6 sm:p-7 border border-hairline relative transition-colors duration-300 hover:border-accent/40 dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.9)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)]"
             >
               <div>
                 {/* Browser Window Mockup Frame with Real Thumbnail */}

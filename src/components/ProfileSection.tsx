@@ -198,7 +198,7 @@ export default function ProfileSection() {
                 href="mailto:emmandoyesus@gmail.com"
                 whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-ink bg-chalk hover:bg-white transition-all flex-1"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-ink bg-chalk dark:hover:bg-white hover:bg-chalk/90 transition-all flex-1"
               >
                 <Mail size={14} />
                 <span>Email me</span>

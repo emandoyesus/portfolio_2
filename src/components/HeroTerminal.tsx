@@ -86,7 +86,7 @@ export default function HeroTerminal() {
       <div className="absolute -inset-1.5 bg-gradient-to-r from-[#181c66]/50 via-[#2e3794]/40 to-[#181c66]/50 rounded-xl blur-xl opacity-70 transition duration-1000 -z-10" />
 
       {/* Code Window Box */}
-      <div className="relative bg-card/95 border border-hairline backdrop-blur-xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.95)] overflow-hidden transition-all duration-300">
+      <div className="relative bg-card/95 border border-hairline backdrop-blur-xl dark:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.95)] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] overflow-hidden transition-all duration-300">
         {/* Title Bar */}
         <div className="flex items-center justify-between px-4 py-2.5 bg-surface/90 border-b border-hairline select-none">
           {/* Traffic lights with interactive minimize button */}
@@ -185,7 +185,7 @@ export default function HeroTerminal() {
                       </div>
                       <div className="flex-1 font-mono pl-3">
                         <span className="text-muted/80">&quot;{field.key}&quot;</span>:{" "}
-                        <span className="text-emerald-400">&quot;{field.value}&quot;</span>,
+                        <span className="dark:text-emerald-400 text-emerald-700 font-medium">&quot;{field.value}&quot;</span>,
                       </div>
                     </div>
                   );
@@ -259,7 +259,7 @@ export default function HeroTerminal() {
                               {itemLine}
                             </div>
                             <div className="flex-1 font-mono pl-7">
-                              <span className="text-[#93c5fd]">&quot;{item}&quot;</span>
+                              <span className="dark:text-[#93c5fd] text-blue-700 font-medium">&quot;{item}&quot;</span>
                               {isLastItem ? "" : ","}
                             </div>
                           </div>
