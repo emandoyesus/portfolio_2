@@ -208,11 +208,11 @@ export default function Footer() {
                     download="Emandoyesus_Tesfaye_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ y: -1, filter: "brightness(1.05)" }}
+                    whileHover={{ y: -1 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-[#a5b2ad] hover:bg-[#b2bfba] text-[#172537] font-sans font-medium text-xs tracking-tight shadow-sm transition-all w-full select-none cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border border-accent/40 hover:border-accent bg-[#14192b] hover:bg-[#1a2139] text-accent hover:text-white font-sans font-medium text-xs tracking-tight shadow-[0_0_15px_-3px_rgba(112,126,255,0.15)] hover:shadow-[0_0_20px_-2px_rgba(112,126,255,0.3)] transition-all w-full select-none cursor-pointer"
                   >
-                    <BsFiletypePdf className="size-4 text-[#172537] shrink-0" />
+                    <BsFiletypePdf className="size-4 text-accent transition-colors" />
                     <span>Download Resume</span>
                   </motion.a>
 
