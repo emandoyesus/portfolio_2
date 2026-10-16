@@ -117,8 +117,41 @@ export default function HeroSection() {
             {/* Featured Projects Button with Rolling Text Motion */}
             <RollingTextButton href="#projects" text="Featured Projects" />
 
-            {/* Contact Now Button with Interactive Send Animation */}
-            <AddToBasketButton href="#contact" label="Contact Now" />
+            {/* Contact Now Button with Floating Arrow Pointer Cue */}
+            <div className="relative inline-flex items-center">
+              <AddToBasketButton href="#contact" label="Contact Now" />
+
+              {/* Floating arrow pointer pointing directly to the button */}
+              <motion.a
+                href="#contact"
+                initial={{ opacity: 0, x: -8 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="hidden sm:inline-flex items-center gap-2 pl-3.5 select-none group/pointer text-accent hover:text-chalk transition-colors cursor-pointer"
+                title="Scroll to contact form"
+              >
+                <motion.span
+                  animate={{ x: [0, -4, 0] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  className="inline-flex items-center gap-1.5"
+                >
+                  <svg
+                    className="w-4 h-4 transition-transform duration-200 group-hover/pointer:-translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19 12H5m0 0l6-6m-6 6l6 6" />
+                  </svg>
+                  <span className="font-mono text-[11px] font-medium tracking-widest uppercase">
+                    Let&apos;s talk
+                  </span>
+                </motion.span>
+              </motion.a>
+            </div>
           </motion.div>
 
           {/* Social Links: GitHub, LinkedIn, Telegram, Email */}
