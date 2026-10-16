@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TelegramIcon } from "@/components/ui/social-links";
-import { getTechIcon } from "@/lib/tech-icons";
+import { getTechIcon, getTechBrandColor } from "@/lib/tech-icons";
 
 export default function ProfileSection() {
   const [activeTab, setActiveTab] = useState<"about" | "stack" | "education">("about");
@@ -374,12 +374,16 @@ export default function ProfileSection() {
                         <div className="flex flex-wrap gap-2">
                           {grp.skills.map((skill) => {
                             const Icon = getTechIcon(skill);
+                            const brandColor = getTechBrandColor(skill);
                             return (
                               <span
                                 key={skill}
-                                className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 bg-card border border-hairline text-chalk font-mono hover:border-accent/60 transition-colors select-none group/skill"
+                                className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 bg-card border border-hairline text-chalk font-mono hover:border-hairline-strong transition-colors select-none group/skill"
                               >
-                                <Icon className="size-3.5 text-accent/80 group-hover/skill:text-accent transition-colors shrink-0" />
+                                <Icon
+                                  style={{ color: brandColor }}
+                                  className="size-3.5 shrink-0 transition-transform duration-200 group-hover/skill:scale-120"
+                                />
                                 <span>{skill}</span>
                               </span>
                             );

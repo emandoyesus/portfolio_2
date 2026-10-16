@@ -76,3 +76,47 @@ export const techIcons: Record<string, IconType | React.ComponentType<{ classNam
 export function getTechIcon(name: string): IconType | React.ComponentType<{ className?: string }> {
   return techIcons[name] || Code2;
 }
+
+export const techBrandColors: Record<string, string> = {
+  React: "#61DAFB",
+  "Next.js": "currentColor",
+  TypeScript: "#3178C6",
+  JavaScript: "#F7DF1E",
+  Svelte: "#FF3E00",
+  "Tailwind CSS": "#06B6D4",
+  Vite: "#646CFF",
+  "React Router": "#CA4245",
+  "Nest.js": "#E0234E",
+  Python: "#3776AB",
+  Java: "#ED8B00",
+  "Node.js": "#5FA04E",
+  Express: "currentColor",
+  "RESTful APIs": "#009688",
+  "REST APIs": "#009688",
+  "Telegram bots": "#26A5E4",
+  Flutter: "#47C5FB",
+  "React Native": "#61DAFB",
+  "Android Development": "#3DDC84",
+  "iOS Development": "currentColor",
+  MongoDB: "#47A248",
+  PostgreSQL: "#4169E1",
+  Supabase: "#3ECF8E",
+  Firebase: "#FFA000",
+  Firestore: "#FFA000",
+  SQL: "#00758F",
+  NoSQL: "#47A248",
+  Render: "#46E3B7",
+  Docker: "#2496ED",
+  Linux: "#FCC624",
+  Postman: "#FF6C37",
+  Git: "#F05032",
+  "Git & GitHub": "#F05032",
+  Vercel: "currentColor",
+  Cloudinary: "#3448C5",
+  EmailJS: "#F15822",
+};
+
+export function getTechBrandColor(name: string): string {
+  return techBrandColors[name] || "currentColor";
+}
+

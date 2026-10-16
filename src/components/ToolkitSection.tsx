@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { getTechIcon } from "@/lib/tech-icons";
+import { getTechIcon, getTechBrandColor } from "@/lib/tech-icons";
 
 const toolsBand1 = [
   "React",
@@ -87,12 +87,16 @@ export default function ToolkitSection() {
               <ul className="marquee__set flex items-center gap-3 sm:gap-4 pr-3 sm:pr-4 shrink-0">
                 {band1Items.map((tool, idx) => {
                   const Icon = getTechIcon(tool);
+                  const brandColor = getTechBrandColor(tool);
                   return (
                     <li
                       key={`b1-${tool}-${idx}`}
-                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-hairline-strong transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                     >
-                      <Icon className="size-4 text-accent/80 group-hover:text-accent transition-transform duration-200 group-hover:scale-115 shrink-0" />
+                      <Icon
+                        style={{ color: brandColor }}
+                        className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-125"
+                      />
                       <span>{tool}</span>
                     </li>
                   );
@@ -102,12 +106,16 @@ export default function ToolkitSection() {
               <ul className="marquee__set flex items-center gap-3 sm:gap-4 pr-3 sm:pr-4 shrink-0" aria-hidden="true">
                 {band1Items.map((tool, idx) => {
                   const Icon = getTechIcon(tool);
+                  const brandColor = getTechBrandColor(tool);
                   return (
                     <li
                       key={`b1-clone-${tool}-${idx}`}
-                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-hairline-strong transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                     >
-                      <Icon className="size-4 text-accent/80 group-hover:text-accent transition-transform duration-200 group-hover:scale-115 shrink-0" />
+                      <Icon
+                        style={{ color: brandColor }}
+                        className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-125"
+                      />
                       <span>{tool}</span>
                     </li>
                   );
@@ -128,12 +136,16 @@ export default function ToolkitSection() {
               <ul className="marquee__set flex items-center gap-3 sm:gap-4 pr-3 sm:pr-4 shrink-0">
                 {band2Items.map((tool, idx) => {
                   const Icon = getTechIcon(tool);
+                  const brandColor = getTechBrandColor(tool);
                   return (
                     <li
                       key={`b2-${tool}-${idx}`}
-                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-hairline-strong transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                     >
-                      <Icon className="size-4 text-accent/80 group-hover:text-accent transition-transform duration-200 group-hover:scale-115 shrink-0" />
+                      <Icon
+                        style={{ color: brandColor }}
+                        className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-125"
+                      />
                       <span>{tool}</span>
                     </li>
                   );
@@ -143,12 +155,16 @@ export default function ToolkitSection() {
               <ul className="marquee__set flex items-center gap-3 sm:gap-4 pr-3 sm:pr-4 shrink-0" aria-hidden="true">
                 {band2Items.map((tool, idx) => {
                   const Icon = getTechIcon(tool);
+                  const brandColor = getTechBrandColor(tool);
                   return (
                     <li
                       key={`b2-clone-${tool}-${idx}`}
-                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-hairline-strong transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
                     >
-                      <Icon className="size-4 text-accent/80 group-hover:text-accent transition-transform duration-200 group-hover:scale-115 shrink-0" />
+                      <Icon
+                        style={{ color: brandColor }}
+                        className="size-4 shrink-0 transition-transform duration-200 group-hover:scale-125"
+                      />
                       <span>{tool}</span>
                     </li>
                   );
