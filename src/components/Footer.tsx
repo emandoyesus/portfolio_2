@@ -234,7 +234,7 @@ export default function Footer() {
             {/* Bottom Credits & Legal */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-muted">
               <span>&copy; {currentYear} Emandoyesus Tesfaye.</span>
-              <span className="text-center sm:text-right">All rights reserved.</span>
+              <span className="text-center sm:text-right">Built with Next.js</span>
             </div>
           </div>
         </motion.footer>
