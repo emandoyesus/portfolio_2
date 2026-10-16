@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { ArrowUp, ArrowUpRight, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import {
   CatGithubIcon,
   LinkedinBoxIcon,
@@ -107,7 +107,7 @@ export default function Footer() {
         <motion.footer
           ref={contentRef}
           style={{ y, opacity, scale }}
-          className="relative w-full border-t border-hairline bg-black/98 pt-16 pb-12 px-6 sm:px-10 overflow-hidden shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.95)]"
+          className="relative w-full border-t border-hairline bg-black pt-16 pb-12 px-6 sm:px-10 overflow-hidden shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.95)]"
         >
           {/* Top Curtain Shadow: soft physical depth illusion as page slides off */}
           <div
@@ -115,23 +115,13 @@ export default function Footer() {
             className="pointer-events-none absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-black/60 to-transparent z-10"
           />
 
-          {/* Minimal atmospheric aura */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[420px] h-[100px] bg-[#1a2342]/10 blur-[90px] -z-10"
-          />
-
           <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
-            {/* Top Grid: Symmetrically spaced columns with balanced headers & rhythm */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-10 border-b border-hairline items-start">
-              {/* Column 1: Profile & Identity */}
+            {/* Top Grid: Symmetrically spaced columns matching reference image */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-10 border-b border-hairline/40 items-start">
+              {/* Column 1: Identity & Bio */}
               <div className="flex flex-col">
-                <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold mb-4">
-                  Profile
-                </p>
-
                 <div className="flex items-center gap-3">
-                  <span className="flex size-9 items-center justify-center border border-hairline bg-[#080808] text-accent font-serif font-bold text-sm">
+                  <span className="flex size-9 items-center justify-center border border-white/20 bg-transparent text-accent font-serif font-bold text-sm">
                     ET
                   </span>
                   <div>
@@ -144,13 +134,13 @@ export default function Footer() {
                   </div>
                 </div>
 
-                <p className="font-sans text-xs text-muted leading-relaxed mt-3 max-w-[260px]">
+                <p className="font-sans text-xs text-muted leading-relaxed mt-4 max-w-[260px]">
                   Building practical, fast web applications and native mobile apps with modern, reliable engineering.
                 </p>
 
-                <div className="flex flex-col gap-2 pt-3 text-[11px] font-mono text-muted">
+                <div className="flex flex-col gap-2 pt-4 text-[11px] font-mono text-muted">
                   <div className="inline-flex items-center gap-2">
-                    <span className="size-2 rounded-full bg-positive animate-pulse shrink-0" />
+                    <span className="size-2 rounded-full bg-emerald-500 shrink-0" />
                     <span>Available for new projects</span>
                   </div>
                   <div className="inline-flex items-center gap-1.5">
@@ -163,24 +153,17 @@ export default function Footer() {
               {/* Column 2: Navigation */}
               <div className="flex flex-col">
                 <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold mb-4">
-                  Navigation
+                  NAVIGATION
                 </p>
 
-                <ul className="flex flex-col gap-2.5 text-xs font-mono">
+                <ul className="flex flex-col gap-3 text-xs font-sans text-muted">
                   {navLinks.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-muted hover:text-chalk transition-colors inline-flex items-center gap-2 group py-0.5"
+                        className="hover:text-chalk transition-colors inline-block py-0.5"
                       >
-                        <span className="text-hairline-strong text-[10px] group-hover:text-accent transition-colors font-mono">
-                          &gt;
-                        </span>
-                        <span>{link.name}</span>
-                        <ArrowUpRight
-                          size={11}
-                          className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-accent"
-                        />
+                        {link.name}
                       </a>
                     </li>
                   ))}
@@ -190,10 +173,10 @@ export default function Footer() {
               {/* Column 3: Connect & Socials */}
               <div className="flex flex-col">
                 <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold mb-4">
-                  Connect
+                  CONNECT
                 </p>
 
-                <ul className="flex flex-col gap-2.5 text-xs font-mono">
+                <ul className="flex flex-col gap-3 text-xs font-sans text-muted">
                   {socialLinks.map((item) => {
                     const Icon = item.icon;
                     return (
@@ -202,14 +185,10 @@ export default function Footer() {
                           href={item.href}
                           target={item.href.startsWith("http") ? "_blank" : undefined}
                           rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                          className="text-muted hover:text-chalk transition-colors inline-flex items-center gap-2.5 group py-0.5"
+                          className="hover:text-chalk transition-colors inline-flex items-center gap-2.5 py-0.5 group"
                         >
-                          <Icon className="size-3.5 text-[#8fa0b5] group-hover:text-accent transition-colors shrink-0" />
+                          <Icon className="size-3.5 text-muted group-hover:text-chalk transition-colors shrink-0" />
                           <span>{item.name}</span>
-                          <ArrowUpRight
-                            size={11}
-                            className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-accent"
-                          />
                         </a>
                       </li>
                     );
@@ -220,31 +199,34 @@ export default function Footer() {
               {/* Column 4: Actions */}
               <div className="flex flex-col">
                 <p className="font-mono text-xs uppercase tracking-wider text-accent font-semibold mb-4">
-                  Actions
+                  ACTIONS
                 </p>
 
-                <div className="flex flex-col gap-2.5">
+                <div className="flex flex-col gap-3">
                   <motion.a
                     href="/cv.pdf"
                     download="Emandoyesus_Tesfaye_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ y: -1 }}
+                    whileHover={{ y: -1, filter: "brightness(1.05)" }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-hairline bg-[#080808] hover:border-accent/60 hover:text-accent text-chalk font-mono text-xs transition-all w-full select-none"
+                    className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-[#a5b2ad] hover:bg-[#b2bfba] text-[#172537] font-sans font-medium text-xs tracking-tight shadow-sm transition-all w-full select-none cursor-pointer"
                   >
-                    <BsFiletypePdf className="size-3.5 text-accent" />
-                    <span>Download Resume (PDF)</span>
+                    <BsFiletypePdf className="size-4 text-[#172537] shrink-0" />
+                    <span>Download Resume</span>
                   </motion.a>
 
-                  <button
+                  <motion.button
                     type="button"
                     onClick={scrollToTop}
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-hairline bg-[#080808] hover:border-hairline-strong hover:text-chalk text-muted font-mono text-xs transition-all w-full select-none cursor-pointer"
+                    whileHover={{ y: -1 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/20 hover:border-white/40 bg-transparent text-muted hover:text-chalk font-mono text-xs transition-all w-full select-none cursor-pointer"
                   >
-                    <ArrowUp size={13} />
+                    <span>↑</span>
                     <span>Back to Top</span>
-                  </button>
+                    <span>↑</span>
+                  </motion.button>
                 </div>
               </div>
             </div>
