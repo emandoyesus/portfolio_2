@@ -133,9 +133,9 @@ export default function SocialLinks({ className = "" }: { className?: string }) 
             target={item.href.startsWith("http") ? "_blank" : undefined}
             rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
             aria-label={item.name}
-            className="group/social inline-flex items-center gap-2 font-sans text-[14px] sm:text-[15px] font-normal text-[#8fa0b5] transition-colors duration-200 hover:text-white"
+            className="group/social inline-flex items-center gap-2 font-sans text-[14px] sm:text-[15px] font-normal text-muted dark:text-[#8fa0b5] transition-colors duration-200 hover:text-black dark:hover:text-white"
           >
-            <Icon className="size-[17px] text-[#8fa0b5] transition-colors duration-200 group-hover/social:text-white" />
+            <Icon className="size-[17px] text-muted dark:text-[#8fa0b5] transition-colors duration-200 group-hover/social:text-black dark:group-hover/social:text-white" />
             <span>{item.name}</span>
           </a>
         );

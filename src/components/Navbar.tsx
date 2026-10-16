@@ -42,7 +42,7 @@ export default function Navbar() {
           aria-label="Emando Home"
           className="group inline-flex items-center gap-1.5 select-none"
         >
-          <span className="font-display text-xl font-normal tracking-tight text-chalk transition-colors group-hover:text-white">
+          <span className="font-display text-xl font-normal tracking-tight text-chalk transition-colors group-hover:text-black dark:group-hover:text-white">
             Emando
           </span>
           <span className="size-1.5 rounded-full bg-accent transition-transform duration-300 group-hover:scale-125" />
