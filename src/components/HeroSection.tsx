@@ -41,7 +41,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero-section"
-      className="relative flex w-full flex-col items-center gap-10 overflow-hidden px-6 pt-24 pb-12 sm:px-10 sm:pt-28 lg:gap-14"
+      className="relative flex w-full flex-col items-center gap-10 overflow-hidden px-6 pt-24 pb-12 sm:px-10 sm:pt-28 lg:gap-14 dark:bg-[#070a12]"
     >
       {/* Architectural blueprint grid - Hero Section Only */}
       <div
@@ -49,10 +49,10 @@ export default function HeroSection() {
         className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--grid-line)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-line)_1px,transparent_1px)] bg-[size:110px_110px] [mask-image:radial-gradient(ellipse_110%_90%_at_50%_35%,#000_75%,transparent_100%)]"
       />
 
-      {/* Atmospheric subtle deep wash on the right behind hero figure */}
+      {/* Atmospheric subtle deep midnight wash on the right behind hero figure */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-1/4 h-[550px] w-[650px] rounded-full bg-gradient-to-bl from-accent/15 via-accent/5 to-transparent blur-3xl opacity-50 dark:opacity-60 z-0"
+        className="pointer-events-none absolute right-0 top-1/4 h-[550px] w-[650px] rounded-full bg-gradient-to-bl from-accent/15 via-accent/5 to-transparent dark:from-[#121c42]/20 dark:via-[#0a1028]/15 blur-3xl opacity-50 dark:opacity-60 z-0"
       />
 
       {/* Smooth transitional gradient fade at bottom into global solid dark background */}
@@ -117,44 +117,31 @@ export default function HeroSection() {
             {/* Featured Projects Button with Rolling Text Motion */}
             <RollingTextButton href="#projects" text="Featured Projects" />
 
-            {/* Contact Now Button with Hand-drawn Arrow Pointer Drawing */}
+            {/* Contact Now Button & Hand-drawn Decorative Arrow */}
             <div className="relative inline-flex items-center">
               <AddToBasketButton href="#contact" label="Contact Now" />
 
-              {/* Hand-drawn sketch arrow drawing pointing directly to the button */}
-              <motion.a
-                href="#contact"
-                initial={{ opacity: 0, x: -6 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="hidden sm:inline-flex items-center pl-3.5 select-none text-accent hover:text-chalk transition-colors cursor-pointer group/arrow"
-                title="Scroll to contact form"
-                aria-label="Scroll to contact section"
+              {/* Hand-drawn decorative arrow pointing to CTA */}
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 148 56"
+                fill="none"
+                className="pointer-events-none text-blue-600 dark:text-[#4d5bd6] hidden w-[90px] -translate-y-2 sm:block opacity-75 ml-3"
               >
-                <motion.svg
-                  animate={{ x: [0, -4, 0] }}
-                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                  width="46"
-                  height="22"
-                  viewBox="0 0 46 22"
-                  fill="none"
-                  className="stroke-current transition-transform duration-200 group-hover/arrow:-translate-x-1"
-                >
-                  {/* Hand-drawn sketched wavy shaft */}
-                  <path
-                    d="M43 12 C31 7, 19 16, 4 11"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                  />
-                  {/* Hand-drawn sketched arrowhead */}
-                  <path
-                    d="M13 5 L3.5 11 L12 17"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </motion.svg>
-              </motion.a>
+                <path
+                  d="M140 8 C 104 12, 58 26, 20 46"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M38 48 L18 45 L28 28"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
           </motion.div>
 
