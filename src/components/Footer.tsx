@@ -205,7 +205,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-3">
                   <motion.a
                     href="/cv.pdf"
-                    download="Emandoyesus_Tesfaye_Resume.pdf"
+                    download="Emandoyesus_CV.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -1 }}

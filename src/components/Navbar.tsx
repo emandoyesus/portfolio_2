@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* Download CV Navbar Link */}
           <motion.a
             href="/cv.pdf"
-            download="Emandoyesus_Tesfaye_CV.pdf"
+            download="Emandoyesus_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Download Emandoyesus Tesfaye's CV"
@@ -141,7 +141,7 @@ export default function Navbar() {
               ))}
               <motion.a
                 href="/cv.pdf"
-                download="Emandoyesus_Tesfaye_CV.pdf"
+                download="Emandoyesus_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
