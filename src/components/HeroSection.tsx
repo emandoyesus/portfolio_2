@@ -80,9 +80,9 @@ export default function HeroSection() {
         >
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3 py-1 border border-hairline bg-surface/80 text-xs font-mono text-[#828ddc] pointer-events-auto"
+            className="inline-flex items-center gap-2 px-3 py-1 border border-blue-600/30 dark:border-hairline bg-blue-500/10 dark:bg-surface/80 text-xs font-mono text-blue-700 dark:text-[#828ddc] font-medium pointer-events-auto"
           >
-            <span className="size-1.5 rounded-full bg-[#3d49b8] animate-pulse" />
+            <span className="size-1.5 rounded-full bg-blue-600 dark:bg-[#3d49b8] animate-pulse" />
             <span>FULL STACK DEVELOPER • MEKELLE, ETHIOPIA</span>
           </motion.div>
 

@@ -221,7 +221,7 @@ export default function Footer() {
                     onClick={scrollToTop}
                     whileHover={{ y: -1 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-hairline hover:border-hairline-strong bg-transparent text-muted hover:text-chalk font-mono text-xs transition-all w-full select-none cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-hairline hover:border-black dark:hover:border-hairline-strong bg-transparent hover:bg-black dark:hover:bg-white/10 text-muted hover:text-white dark:hover:text-chalk font-mono text-xs transition-all w-full select-none cursor-pointer"
                   >
                     <span>↑</span>
                     <span>Back to Top</span>
