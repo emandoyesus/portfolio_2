@@ -19,6 +19,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { TelegramIcon } from "@/components/ui/social-links";
 import { getTechIcon, getTechBrandColor } from "@/lib/tech-icons";
+import { SiUdacity } from "react-icons/si";
 
 export default function ProfileSection() {
   const [activeTab, setActiveTab] = useState<"about" | "stack" | "education">("about");
@@ -311,7 +312,15 @@ export default function ProfileSection() {
                       </div>
                     </div>
                     <div className="p-4 bg-card flex items-center gap-3">
-                      <GraduationCap size={16} className="text-accent shrink-0" />
+                      <div className="relative size-6 rounded-full overflow-hidden border border-hairline bg-white/5 shrink-0">
+                        <Image
+                          src="/mekelle-university-logo.png"
+                          alt="Mekelle University"
+                          width={24}
+                          height={24}
+                          className="object-contain"
+                        />
+                      </div>
                       <div>
                         <span className="block text-xs uppercase text-muted font-mono">Education</span>
                         <span className="text-sm font-medium text-chalk">Mekelle University (2023–2027)</span>
@@ -400,8 +409,16 @@ export default function ProfileSection() {
                   {/* Degree Card */}
                   <div className="p-5 border border-hairline bg-surface/40">
                     <div className="flex items-start justify-between gap-4 mb-2">
-                      <div className="flex items-center gap-2.5">
-                        <GraduationCap className="size-5 text-accent" />
+                      <div className="flex items-center gap-3">
+                        <div className="relative size-7 rounded-full overflow-hidden border border-hairline bg-white/10 shrink-0 shadow-sm">
+                          <Image
+                            src="/mekelle-university-logo.png"
+                            alt="Mekelle University Emblem"
+                            width={28}
+                            height={28}
+                            className="object-contain"
+                          />
+                        </div>
                         <h4 className="text-base font-semibold text-chalk">
                           Mekelle University
                         </h4>
@@ -421,7 +438,7 @@ export default function ProfileSection() {
                   {/* Nanodegree Certificates */}
                   <div>
                     <h5 className="text-xs font-mono uppercase tracking-wider text-accent mb-3 flex items-center gap-2">
-                      <Award size={14} />
+                      <SiUdacity className="size-4 text-[#01B3E3]" />
                       <span>Certified Nanodegrees</span>
                     </h5>
                     <div className="space-y-3">
@@ -436,19 +453,24 @@ export default function ProfileSection() {
                           {/* Ambient top highlight on hover */}
                           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <div className="flex items-start justify-between gap-4">
-                            <div className="space-y-1">
-                              <p className="text-sm font-semibold text-chalk group-hover:text-accent transition-colors flex items-center gap-1.5">
-                                <span>{cert.title}</span>
-                                <ExternalLink size={13} className="text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
-                              </p>
-                              <p className="text-xs text-muted font-sans leading-relaxed">
-                                {cert.issuer} • {cert.description}
-                              </p>
-                              <div className="pt-1 flex items-center gap-2">
-                                <span className="inline-flex items-center gap-1 text-[11px] font-mono text-accent/80 group-hover:text-accent transition-colors">
-                                  <span>Verify Certificate</span>
-                                  <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
-                                </span>
+                            <div className="flex items-start gap-3">
+                              <div className="size-8 rounded-lg bg-[#01B3E3]/10 border border-[#01B3E3]/25 flex items-center justify-center shrink-0 mt-0.5 group-hover:border-[#01B3E3]/50 transition-colors">
+                                <SiUdacity className="size-4 text-[#01B3E3]" />
+                              </div>
+                              <div className="space-y-1">
+                                <p className="text-sm font-semibold text-chalk group-hover:text-accent transition-colors flex items-center gap-1.5">
+                                  <span>{cert.title}</span>
+                                  <ExternalLink size={13} className="text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+                                </p>
+                                <p className="text-xs text-muted font-sans leading-relaxed">
+                                  <span className="text-[#01B3E3] font-medium">{cert.issuer}</span> • {cert.description}
+                                </p>
+                                <div className="pt-1 flex items-center gap-2">
+                                  <span className="inline-flex items-center gap-1 text-[11px] font-mono text-accent/80 group-hover:text-accent transition-colors">
+                                    <span>Verify Certificate</span>
+                                    <span className="group-hover:translate-x-0.5 transition-transform">↗</span>
+                                  </span>
+                                </div>
                               </div>
                             </div>
                             <span className="text-xs font-mono text-accent shrink-0 px-2 py-0.5 border border-accent/30 bg-accent/5">

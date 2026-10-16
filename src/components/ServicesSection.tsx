@@ -8,6 +8,7 @@ import {
   Bot,
   CloudUpload,
 } from "lucide-react";
+import { SiUdacity } from "react-icons/si";
 import { motion } from "framer-motion";
 
 interface ServiceItem {
@@ -148,11 +149,12 @@ export default function ServicesSection() {
                       href={svc.certUrl || "https://www.udacity.com/certificate/e/3c56be12-dca0-11f0-9964-1b6de304da39"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[11px] px-2 py-0.5 border border-accent/40 text-accent font-mono bg-accent/5 hover:bg-accent/15 transition-colors inline-flex items-center gap-1"
+                      className="text-[11px] px-2 py-0.5 border border-[#01B3E3]/40 text-[#01B3E3] font-mono bg-[#01B3E3]/5 hover:bg-[#01B3E3]/15 transition-colors inline-flex items-center gap-1.5"
                       title={svc.certTitle || "View Udacity Certificate"}
                     >
+                      <SiUdacity className="size-3 text-[#01B3E3] shrink-0" />
                       <span>{tag}</span>
-                      <span>↗</span>
+                      <span className="opacity-70">↗</span>
                     </a>
                   ) : (
                     <span
