@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { name: "Projects", href: "#projects" },
@@ -79,6 +80,9 @@ export default function Navbar() {
             <span className="sm:hidden">CV</span>
           </motion.a>
 
+          {/* Theme Toggle Button */}
+          <ThemeToggle />
+
           {/* Subtle Work Availability Status */}
           <div className="hidden sm:inline-flex items-center gap-2 border border-hairline bg-surface/70 px-3 py-1 font-mono text-[11px] text-muted select-none">
             <span className="size-1.5 rounded-full bg-positive animate-pulse" />
@@ -154,6 +158,12 @@ export default function Navbar() {
                 </span>
                 <ArrowUpRight size={14} className="text-accent/60" />
               </motion.a>
+
+              {/* Theme switcher row in mobile menu */}
+              <div className="flex items-center justify-between border-t border-hairline/30 pt-3 font-mono text-xs uppercase tracking-wider text-muted">
+                <span>Theme Mode</span>
+                <ThemeToggle />
+              </div>
             </motion.nav>
           </motion.div>
         )}

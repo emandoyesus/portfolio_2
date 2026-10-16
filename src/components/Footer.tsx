@@ -107,12 +107,12 @@ export default function Footer() {
         <motion.footer
           ref={contentRef}
           style={{ y, opacity, scale }}
-          className="relative w-full border-t border-hairline bg-black pt-16 pb-12 px-6 sm:px-10 overflow-hidden shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.95)]"
+          className="relative w-full border-t border-hairline dark:bg-black bg-slate-100/95 pt-16 pb-12 px-6 sm:px-10 overflow-hidden shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.15)] dark:shadow-[0_-24px_48px_-12px_rgba(0,0,0,0.95)]"
         >
           {/* Top Curtain Shadow: soft physical depth illusion as page slides off */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute top-0 left-0 right-0 h-10 bg-gradient-to-b from-black/60 to-transparent z-10"
+            className="pointer-events-none absolute top-0 left-0 right-0 h-10 bg-gradient-to-b dark:from-black/60 from-slate-300/30 to-transparent z-10"
           />
 
           <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
@@ -121,7 +121,7 @@ export default function Footer() {
               {/* Column 1: Identity & Bio */}
               <div className="flex flex-col">
                 <div className="flex items-center gap-3">
-                  <span className="flex size-9 items-center justify-center border border-white/20 bg-transparent text-accent font-serif font-bold text-sm">
+                  <span className="flex size-9 items-center justify-center border border-hairline bg-surface/50 text-accent font-serif font-bold text-sm">
                     ET
                   </span>
                   <div>
@@ -210,7 +210,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     whileHover={{ y: -1 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border border-accent/40 hover:border-accent bg-[#14192b] hover:bg-[#1a2139] text-accent hover:text-white font-sans font-medium text-xs tracking-tight shadow-[0_0_15px_-3px_rgba(112,126,255,0.15)] hover:shadow-[0_0_20px_-2px_rgba(112,126,255,0.3)] transition-all w-full select-none cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border border-accent/40 hover:border-accent dark:bg-[#14192b] dark:hover:bg-[#1a2139] bg-accent/10 hover:bg-accent/20 text-accent font-sans font-medium text-xs tracking-tight shadow-[0_0_15px_-3px_rgba(112,126,255,0.15)] hover:shadow-[0_0_20px_-2px_rgba(112,126,255,0.3)] transition-all w-full select-none cursor-pointer"
                   >
                     <BsFiletypePdf className="size-4 text-accent transition-colors" />
                     <span>Download Resume</span>
@@ -221,7 +221,7 @@ export default function Footer() {
                     onClick={scrollToTop}
                     whileHover={{ y: -1 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/20 hover:border-white/40 bg-transparent text-muted hover:text-chalk font-mono text-xs transition-all w-full select-none cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-hairline hover:border-hairline-strong bg-transparent text-muted hover:text-chalk font-mono text-xs transition-all w-full select-none cursor-pointer"
                   >
                     <span>↑</span>
                     <span>Back to Top</span>

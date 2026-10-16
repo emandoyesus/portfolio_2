@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,17 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#080808",
-        surface: "#0f0f0f",
-        card: "#131313",
-        wash: "#1a1a1a",
-        chalk: "#f4f3f0",
-        muted: "#888888",
-        dim: "#555555",
-        hairline: "rgba(255, 255, 255, 0.08)",
-        "hairline-strong": "rgba(255, 255, 255, 0.18)",
-        accent: "#707eff", // Cosmic indigo accent matching #181c66
-        "accent-secondary": "#6b8f71", // Sage green
+        ink: "rgb(var(--bg-ink-rgb) / <alpha-value>)",
+        surface: "rgb(var(--bg-surface-rgb) / <alpha-value>)",
+        card: "rgb(var(--bg-card-rgb) / <alpha-value>)",
+        wash: "rgb(var(--bg-wash-rgb) / <alpha-value>)",
+        chalk: "rgb(var(--text-chalk-rgb) / <alpha-value>)",
+        muted: "rgb(var(--text-muted-rgb) / <alpha-value>)",
+        dim: "rgb(var(--text-dim-rgb) / <alpha-value>)",
+        hairline: "var(--border-hairline)",
+        "hairline-strong": "var(--border-hairline-strong)",
+        accent: "rgb(var(--accent-rgb) / <alpha-value>)",
+        "accent-secondary": "#6b8f71",
         positive: "#22c55e",
       },
       fontFamily: {

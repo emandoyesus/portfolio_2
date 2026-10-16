@@ -43,16 +43,16 @@ export default function HeroSection() {
       id="hero-section"
       className="relative flex w-full flex-col items-center gap-10 overflow-hidden px-6 pt-24 pb-12 sm:px-10 sm:pt-28 lg:gap-14"
     >
-      {/* Dark navy architectural grid - Hero Section Only */}
+      {/* Architectural blueprint grid - Hero Section Only */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(46,65,130,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(46,65,130,0.15)_1px,transparent_1px)] bg-[size:110px_110px] [mask-image:radial-gradient(ellipse_110%_90%_at_50%_35%,#000_75%,transparent_100%)]"
+        className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--grid-line)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-line)_1px,transparent_1px)] bg-[size:110px_110px] [mask-image:radial-gradient(ellipse_110%_90%_at_50%_35%,#000_75%,transparent_100%)]"
       />
 
-      {/* Atmospheric subtle deep midnight wash on the right behind hero figure */}
+      {/* Atmospheric subtle deep wash on the right behind hero figure */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-1/4 h-[550px] w-[650px] rounded-full bg-gradient-to-bl from-[#121c42]/20 via-[#0a1028]/15 to-transparent blur-3xl opacity-60 z-0"
+        className="pointer-events-none absolute right-0 top-1/4 h-[550px] w-[650px] rounded-full bg-gradient-to-bl from-accent/15 via-accent/5 to-transparent blur-3xl opacity-50 dark:opacity-60 z-0"
       />
 
       {/* Smooth transitional gradient fade at bottom into global solid dark background */}

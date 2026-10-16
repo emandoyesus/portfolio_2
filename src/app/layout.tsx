@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 const playfair = localFont({
@@ -43,13 +44,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${playfair.variable} ${inter.variable}`}
+    >
       <body className="relative flex min-h-full flex-col bg-ink text-chalk">
-        {/* Grain texture overlay */}
-        <div aria-hidden="true" className="texture-grain" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {/* Grain texture overlay */}
+          <div aria-hidden="true" className="texture-grain" />
 
-        {/* Page Content */}
-        <div className="relative z-10 flex min-h-full flex-col">{children}</div>
+          {/* Page Content */}
+          <div className="relative z-10 flex min-h-full flex-col">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

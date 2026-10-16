@@ -2,11 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+:root,
+.dark {
+  --bg-ink-rgb: 8 8 8;
+  --bg-surface-rgb: 15 15 15;
+  --bg-card-rgb: 19 19 19;
+  --bg-wash-rgb: 26 26 26;
+  --text-chalk-rgb: 244 243 240;
+  --text-muted-rgb: 136 136 136;
+  --text-dim-rgb: 85 85 85;
+  --accent-rgb: 112 126 255;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-hairline-strong: rgba(255, 255, 255, 0.18);
+  --grid-line: rgba(46, 65, 130, 0.15);
+  color-scheme: dark;
+}
+
+.light {
+  --bg-ink-rgb: 248 250 252;
+  --bg-surface-rgb: 255 255 255;
+  --bg-card-rgb: 255 255 255;
+  --bg-wash-rgb: 241 245 249;
+  --text-chalk-rgb: 15 23 42;
+  --text-muted-rgb: 100 116 139;
+  --text-dim-rgb: 148 163 184;
+  --accent-rgb: 59 80 224;
+  --border-hairline: rgba(15, 23, 42, 0.08);
+  --border-hairline-strong: rgba(15, 23, 42, 0.16);
+  --grid-line: rgba(59, 80, 224, 0.09);
+  color-scheme: light;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #080808;
-    color: #f4f3f0;
+    background-color: rgb(var(--bg-ink-rgb));
+    color: rgb(var(--text-chalk-rgb));
   }
 
   body {
