@@ -1,0 +1,78 @@
+import React from "react";
+import type { IconType } from "react-icons";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiSvelte,
+  SiTailwindcss,
+  SiVite,
+  SiReactrouter,
+  SiNestjs,
+  SiPython,
+  SiNodedotjs,
+  SiExpress,
+  SiFlutter,
+  SiMongodb,
+  SiPostgresql,
+  SiSupabase,
+  SiFirebase,
+  SiRender,
+  SiDocker,
+  SiLinux,
+  SiPostman,
+  SiGit,
+  SiGithub,
+  SiVercel,
+  SiCloudinary,
+  SiTelegram,
+  SiAndroid,
+  SiApple,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
+import { TbApi, TbDatabase, TbMail } from "react-icons/tb";
+import { Code2 } from "lucide-react";
+
+export const techIcons: Record<string, IconType | React.ComponentType<{ className?: string }>> = {
+  React: SiReact,
+  "Next.js": SiNextdotjs,
+  TypeScript: SiTypescript,
+  JavaScript: SiJavascript,
+  Svelte: SiSvelte,
+  "Tailwind CSS": SiTailwindcss,
+  Vite: SiVite,
+  "React Router": SiReactrouter,
+  "Nest.js": SiNestjs,
+  Python: SiPython,
+  Java: FaJava,
+  "Node.js": SiNodedotjs,
+  Express: SiExpress,
+  "RESTful APIs": TbApi,
+  "REST APIs": TbApi,
+  "Telegram bots": SiTelegram,
+  Flutter: SiFlutter,
+  "React Native": SiReact,
+  "Android Development": SiAndroid,
+  "iOS Development": SiApple,
+  MongoDB: SiMongodb,
+  PostgreSQL: SiPostgresql,
+  Supabase: SiSupabase,
+  Firebase: SiFirebase,
+  Firestore: SiFirebase,
+  SQL: TbDatabase,
+  NoSQL: TbDatabase,
+  Render: SiRender,
+  Docker: SiDocker,
+  Linux: SiLinux,
+  Postman: SiPostman,
+  Git: SiGit,
+  "Git & GitHub": SiGithub,
+  Vercel: SiVercel,
+  Cloudinary: SiCloudinary,
+  EmailJS: TbMail,
+};
+
+export function getTechIcon(name: string): IconType | React.ComponentType<{ className?: string }> {
+  return techIcons[name] || Code2;
+}

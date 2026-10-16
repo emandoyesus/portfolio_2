@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TelegramIcon } from "@/components/ui/social-links";
+import { getTechIcon } from "@/lib/tech-icons";
 
 export default function ProfileSection() {
   const [activeTab, setActiveTab] = useState<"about" | "stack" | "education">("about");
@@ -367,18 +368,22 @@ export default function ProfileSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {skillGroups.map((grp) => (
                       <div key={grp.category} className="p-4 bg-surface/60 border border-hairline">
-                        <span className="block text-xs font-mono uppercase text-accent mb-2">
+                        <span className="block text-xs font-mono uppercase text-accent mb-2.5">
                           {grp.category}
                         </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {grp.skills.map((skill) => (
-                            <span
-                              key={skill}
-                              className="text-xs px-2 py-1 bg-card border border-hairline text-chalk font-mono"
-                            >
-                              {skill}
-                            </span>
-                          ))}
+                        <div className="flex flex-wrap gap-2">
+                          {grp.skills.map((skill) => {
+                            const Icon = getTechIcon(skill);
+                            return (
+                              <span
+                                key={skill}
+                                className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 bg-card border border-hairline text-chalk font-mono hover:border-accent/60 transition-colors select-none group/skill"
+                              >
+                                <Icon className="size-3.5 text-accent/80 group-hover/skill:text-accent transition-colors shrink-0" />
+                                <span>{skill}</span>
+                              </span>
+                            );
+                          })}
                         </div>
                       </div>
                     ))}

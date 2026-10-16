@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getTechIcon } from "@/lib/tech-icons";
 
 const toolsBand1 = [
   "React",
@@ -84,27 +85,33 @@ export default function ToolkitSection() {
             <div className="marquee__track flex w-max py-1">
               {/* Primary set */}
               <ul className="marquee__set flex items-center gap-3 sm:gap-4 pr-3 sm:pr-4 shrink-0">
-                {band1Items.map((tool, idx) => (
-                  <li
-                    key={`b1-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
-                  >
-                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
-                    <span>{tool}</span>
-                  </li>
-                ))}
+                {band1Items.map((tool, idx) => {
+                  const Icon = getTechIcon(tool);
+                  return (
+                    <li
+                      key={`b1-${tool}-${idx}`}
+                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    >
+                      <Icon className="size-4 text-accent/80 group-hover:text-accent transition-transform duration-200 group-hover:scale-115 shrink-0" />
+                      <span>{tool}</span>
+                    </li>
+                  );
+                })}
               </ul>
               {/* Cloned set for seamless infinite loop */}
               <ul className="marquee__set flex items-center gap-3 sm:gap-4 pr-3 sm:pr-4 shrink-0" aria-hidden="true">
-                {band1Items.map((tool, idx) => (
-                  <li
-                    key={`b1-clone-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
-                  >
-                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
-                    <span>{tool}</span>
-                  </li>
-                ))}
+                {band1Items.map((tool, idx) => {
+                  const Icon = getTechIcon(tool);
+                  return (
+                    <li
+                      key={`b1-clone-${tool}-${idx}`}
+                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    >
+                      <Icon className="size-4 text-accent/80 group-hover:text-accent transition-transform duration-200 group-hover:scale-115 shrink-0" />
+                      <span>{tool}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -119,27 +126,33 @@ export default function ToolkitSection() {
             >
               {/* Primary set */}
               <ul className="marquee__set flex items-center gap-3 sm:gap-4 pr-3 sm:pr-4 shrink-0">
-                {band2Items.map((tool, idx) => (
-                  <li
-                    key={`b2-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
-                  >
-                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
-                    <span>{tool}</span>
-                  </li>
-                ))}
+                {band2Items.map((tool, idx) => {
+                  const Icon = getTechIcon(tool);
+                  return (
+                    <li
+                      key={`b2-${tool}-${idx}`}
+                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    >
+                      <Icon className="size-4 text-accent/80 group-hover:text-accent transition-transform duration-200 group-hover:scale-115 shrink-0" />
+                      <span>{tool}</span>
+                    </li>
+                  );
+                })}
               </ul>
               {/* Cloned set for seamless infinite loop */}
               <ul className="marquee__set flex items-center gap-3 sm:gap-4 pr-3 sm:pr-4 shrink-0" aria-hidden="true">
-                {band2Items.map((tool, idx) => (
-                  <li
-                    key={`b2-clone-${tool}-${idx}`}
-                    className="marquee__item px-5 py-2.5 sm:px-6 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
-                  >
-                    <span className="size-1.5 rounded-full bg-accent/60 group-hover:bg-accent transition-colors" />
-                    <span>{tool}</span>
-                  </li>
-                ))}
+                {band2Items.map((tool, idx) => {
+                  const Icon = getTechIcon(tool);
+                  return (
+                    <li
+                      key={`b2-clone-${tool}-${idx}`}
+                      className="marquee__item px-4 py-2.5 sm:px-5 sm:py-3 border border-hairline bg-card/90 hover:bg-surface hover:border-accent/60 transition-all duration-300 text-sm sm:text-[14.5px] font-mono text-chalk/90 shrink-0 select-none shadow-[0_4px_16px_rgba(0,0,0,0.5)] flex items-center gap-2.5 rounded-sm group cursor-default"
+                    >
+                      <Icon className="size-4 text-accent/80 group-hover:text-accent transition-transform duration-200 group-hover:scale-115 shrink-0" />
+                      <span>{tool}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
